@@ -35,8 +35,8 @@ lead:
       note: ""
   positions:
     - role: Postdoctoral Research Fellow
-      place: King Fahd University of Petroleum & Minerals (KFUPM), Saudi Arabia
-      when: Present
+      place: Interdisciplinary Research Center for Sustainable Energy Systems (IRC-SES), King Fahd University of Petroleum & Minerals (KFUPM), Saudi Arabia
+      when: 2026 – Present
     - role: Associate Professor
       place: Dept. of EEE, Jashore University of Science & Technology (JUST)
       when: Present
@@ -70,32 +70,46 @@ groups:
   - title: Undergraduate Students
     badge: Present Supervision
     people:
-      - name: Shah Mohammad Raowaha Rumi
-        email: 201110.eee@student.just.edu.bd
-        topic: Degradation-Aware Intelligent BESS Management for Agricultural Microgrids
+      - name: Md. Riad Hossen
+        email: 211121.eee@student.just.edu.bd
+        topic: Resilient Hybrid AC/DC Solar–HESS Agricultural Virtual Power Plant
         photo: ""
-      - name: Shakib Hasan Shawon
-        email: 201111.eee@student.just.edu.bd
-        topic: Degradation-Aware Intelligent BESS Management for Agricultural Microgrids
+      - name: Naeem all Hasan
+        email: 211115.eee@student.just.edu.bd
+        topic: Resilient Hybrid AC/DC Solar–HESS Agricultural Virtual Power Plant
         photo: ""
-      - name: Rahul Biswas
-        email: 201115.eee@student.just.edu.bd
-        topic: Degradation-Aware Intelligent BESS Management for Agricultural Microgrids
+      - name: Nishat Tasnia
+        email: 211119.eee@student.just.edu.bd
+        topic: EMD-Driven Power Allocation and Fault Diagnosis in Agricultural Electrical Systems
         photo: ""
-      - name: Mursalin Biswas Emon
-        email: 201114.eee@student.just.edu.bd
-        topic: EV-Battery Health monitoring with uncertainty
+      - name: Md. Rizaful Islam
+        email: 211116.eee@student.just.edu.bd
+        topic: EMD-Driven Power Allocation and Fault Diagnosis in Agricultural Electrical Systems
         photo: ""
-      - name: Rifat Islam Rony
-        email: 201123.eee@student.just.edu.bd
-        topic: EV-Battery Health monitoring with uncertainty
+      - name: MD Jamiul Hasan
+        email: 211113.eee@student.just.edu.bd
+        topic: "Impact of Irrigation Pumps on the Voltage Quality of Rural Distribution Networks in Bangladesh: Modelling, Hosting Capacity and Mitigation"
+        photo: ""
+      - name: Md. Nayeem Uddin
+        email: 211102.eee@student.just.edu.bd
+        topic: "Impact of Irrigation Pumps on the Voltage Quality of Rural Distribution Networks in Bangladesh: Modelling, Hosting Capacity and Mitigation"
         photo: ""
 
   # "collapsed: true" shows this group as a fold-out list.
   - title: Past Undergraduate Supervision
-    badge: 2018–2024 batch
+    badge: 2018–2025 batches
     collapsed: true
     people:
+      - name: Shah Mohammad Raowaha Rumi
+        topic: Degradation-Aware Intelligent BESS Management for Agricultural Microgrids
+      - name: Shakib Hasan Shawon
+        topic: Degradation-Aware Intelligent BESS Management for Agricultural Microgrids
+      - name: Rahul Biswas
+        topic: Degradation-Aware Intelligent BESS Management for Agricultural Microgrids
+      - name: Mursalin Biswas Emon
+        topic: EV-Battery Health monitoring with uncertainty
+      - name: Rifat Islam Rony
+        topic: EV-Battery Health monitoring with uncertainty
       - name: Mahfujur Rahman
         topic: EV Impact Analysis
       - name: Fouziya Easmin Tonny
