@@ -39,13 +39,7 @@ lead:
       when: 2026 – Present
     - role: Associate Professor
       place: Dept. of EEE, Jashore University of Science & Technology (JUST)
-      when: Present
-    - role: Principal Investigator, Energy Grid (EG) Research Group
-      place: Jashore University of Science & Technology (JUST)
-      when: Present
-    - role: Faculty Member, Dept. of EEE
-      place: Jashore University of Science & Technology (JUST), joined 2015
-      when: 2015 – Present
+      when: 2022 – Present
 
 groups:
   - title: Master Students

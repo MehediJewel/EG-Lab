@@ -27,9 +27,11 @@ location: Jashore-7408, Bangladesh
 logo: logo.png
 favicon: favicon.png
 hero_photo: campus-hero.jpg       # background of the top banner
-about_photo: campus-about.jpg     # picture in the About section
-about_photo_caption: Jashore University of Science and Technology — campus view
 band_photo: campus-band.jpg       # wide "Our Campus" strip
+research_photo: just-building.jpg # tall picture beside Current Research
+research_photo_caption: Academic building, JUST campus
+teaching_photo: campus-about.jpg  # picture in the Teaching section
+teaching_photo_caption: Jashore University of Science and Technology campus
 
 # "About the Lab" paragraphs. Each paragraph starts with "- ".
 about:

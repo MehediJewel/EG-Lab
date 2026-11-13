@@ -27,14 +27,10 @@ interests:
     text: DC fault identification in multiterminal HVDC systems, adaptive droop control, and impact of HVDC control on power system dynamics.
 
 current:
-  - title: Mission-Aware Robust MPC for Tactical Microgrids under Monsoon Uncertainty
-    text: Intelligent operation of hybrid microgrids in remote and mission-critical environments. A mission-aware Model Predictive Control (MPC) framework is developed for a hybrid PV–battery–diesel system, where mission priorities are directly incorporated into the control strategy, improving resilience and operational efficiency without requiring additional capacity.
-  - title: Consumer-Driven Grid Variability with Electric Vehicle and Renewable Integration
-    text: Integration of EVs and photovoltaic (PV) systems within a small-scale distribution network at JUST, using DIgSILENT PowerFactory quasi-dynamic simulation for 2024. The study evaluates system performance under varying EV penetration levels, highlighting transformer overloading and increased system losses, and investigates solutions for a stable, resilient grid.
-  - title: Machine Learning-based Fault Classification and Localization in Renewable Integrated Power Systems
-    text: A simplified machine learning-based approach for fault classification and localization in power systems with integrated EV and PV, using only three-phase voltage and current data from DIgSILENT PowerFactory simulations, avoiding intricate feature engineering while aiming for accurate, real-time-ready fault diagnostics.
-  - title: Optimizing Grid Resilience with Cost-Effective Integration of EV, PV, and Electrolyzer Systems
-    text: Economically viable pathways to enhance grid resilience at high renewable penetration. Through high-level modeling and optimization, the study explores combinations of solar PV, energy storage, demand response, and grid interconnections, offering strategic insights for policymakers, utilities, and energy planners.
+  - title: Distribution Grid Flexibility and DER Integration
+    text: Unlocking flexibility in distribution networks with high shares of distributed energy resources such as rooftop PV, batteries, electric vehicles and controllable loads. We develop data-driven methods for hosting-capacity assessment, coordinated DER control and local flexibility services that keep voltages and equipment within limits while letting more clean energy onto the grid.
+  - title: Agri-Energy Systems
+    text: Reliable, affordable and clean electricity for agriculture in Bangladesh. Our work covers solar–battery hybrid systems and virtual power plants for irrigation and farm loads, the effect of irrigation pumps on rural power quality, and fault diagnosis and degradation-aware battery management for agricultural microgrids.
 
 funded:
   - title: "Enabling Resilience-Aware Photovoltaic Energy Systems in Bangladesh: A Technical Approach"

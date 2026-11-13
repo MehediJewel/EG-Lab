@@ -55,6 +55,13 @@
     $("about-text").innerHTML = list(s.about).map(function (p) { return "<p>" + esc(flat(p)) + "</p>"; }).join("");
 
     if (s.band_photo) $("band-bg").src = img("photos/site/", s.band_photo);
+    [["research", s.research_photo, s.research_photo_caption], ["teaching", s.teaching_photo, s.teaching_photo_caption]].forEach(function (x) {
+      if (!x[1]) return;
+      $(x[0] + "-img").src = img("photos/site/", x[1]);
+      $(x[0] + "-img").alt = x[2] || "";
+      $(x[0] + "-cap").textContent = x[2] || "";
+      $(x[0] + "-fig").hidden = false;
+    });
     $("campus-title").textContent = s.campus_title || "";
     $("campus-text").textContent = flat(s.campus_text);
     $("campus-addr").textContent = s.campus_address || "";
@@ -152,7 +159,7 @@
       return '<div class="card"><h4>' + esc(x.title) + "</h4><p>" + esc(x.text) + "</p></div>";
     }).join("");
     $("current").innerHTML = list(r.current).map(function (x, i) {
-      return '<details class="card"><summary><span class="num">' + String(i + 1).padStart(2, "0") + "</span><span>" + esc(x.title) + "</span>" + ICON.chev + "</summary><p>" + esc(flat(x.text)) + "</p></details>";
+      return '<div class="card proj"><span class="num">' + String(i + 1).padStart(2, "0") + "</span><h4>" + esc(x.title) + "</h4><p>" + esc(flat(x.text)) + "</p></div>";
     }).join("");
     $("funded").innerHTML = list(r.funded).map(function (x) {
       return '<div class="frow"><div><h4>' + esc(x.title) + '</h4><p>' + esc(x.funder) + '</p></div><div class="fmeta"><span class="tagpill">' + esc(x.role) + '</span><span class="fwhen">' + esc(x.period) + "</span></div></div>";
