@@ -1,0 +1,22 @@
+# =====================================================================
+#  PUBLICATION CORRECTIONS
+#  Publications come from Google Scholar automatically (publications.json).
+#  You normally never touch that file. Use THIS file only to:
+#
+#  1) ADD a paper that is missing from Scholar, under "add:"
+#  2) HIDE a paper Scholar wrongly put on your profile, under "hide:"
+#     (write the title exactly, or just its first few words)
+# =====================================================================
+
+add:
+# Example: delete the # signs at the start of these lines to use it.
+#  - title: Resilient EV-PV Grid Operation under Consumer Variability and ML-Based Fault Diagnosis
+#    authors: M Rahman, FE Tonny, MKH Kajal, M Hassan
+#    venue: Renewable Energy Focus (under review)
+#    year: 2026
+#    url: ""
+#    type: journal        # journal, conference, preprint or other
+
+hide:
+# Example: delete the # at the start of the next line to use it.
+#  - "Strain-dependent optical properties"

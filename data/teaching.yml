@@ -1,0 +1,24 @@
+# =====================================================================
+#  TEACHING
+#  Add or remove courses. Each course is one line: code, then name.
+# =====================================================================
+
+postgraduate:
+  - code: EEE 6302
+    name: Computer Aided Power System Analysis
+  - code: EEE 6310
+    name: Next-generation Power Grid
+
+undergraduate:
+  - code: EEE 1101
+    name: Electrical Circuits - I
+  - code: EEE 3109
+    name: Renewable Energy and Sustainability
+  - code: EEE 3203
+    name: Power Transmission and Distribution
+  - code: EEE 3207
+    name: Control System
+  - code: EEE 4101
+    name: Power System Analysis
+  - code: EEE 4103
+    name: Power Electronics

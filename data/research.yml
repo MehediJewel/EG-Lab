@@ -1,0 +1,60 @@
+# =====================================================================
+#  RESEARCH
+#  Three parts: focus areas, current research, and funded projects.
+#  To add an item, copy an existing block (from the "-" down to the
+#  next "-"), paste it, and change the text.
+#  "image" is optional: upload a picture to photos/research/ and write
+#  its file name, or leave it as "".
+# =====================================================================
+
+focus_areas:
+  - title: Grid modernisation
+    text: Upgrading grid infrastructure so it can host high levels of solar, wind and storage.
+  - title: Low-carbon optimisation
+    text: Data-driven planning and operation of low-carbon energy systems, from campuses to microgrids.
+  - title: Resilience
+    text: Keeping evolving power networks secure and reliable through faults, extreme weather and cyber threats.
+
+interests:
+  - title: Data-driven decision-making
+    text: Optimising low-carbon energy systems with data, from forecasting to real-time operation.
+  - title: Grid resilience and modernisation
+    text: Preparing networks for high renewable shares and keeping them resilient as they evolve.
+  - title: Microgrids and hybrid energy systems
+    text: Mission-aware robust control, defence-centric design and techno-economic optimisation.
+  - title: AI for power systems
+    text: Machine-learning fault classification, localisation and diagnostics in renewable-rich grids.
+  - title: EV and battery systems
+    text: EV impact analysis, battery health under uncertainty and degradation-aware BESS management.
+  - title: HVDC and AC/DC dynamics
+    text: DC fault identification in multiterminal HVDC, adaptive droop and HVDC control impacts.
+
+methods: Dynamic modelling, optimal design, model predictive control, DIgSILENT PowerFactory simulation and machine learning.
+
+current:
+  - title: Mission-aware robust MPC for tactical microgrids under monsoon uncertainty
+    text: A mission-aware model predictive control framework for a hybrid PV–battery–diesel microgrid in remote, mission-critical settings. It keeps power reliable, cuts fuel use, allows quiet operation under uncertain solar output and adds resilience without extra capacity.
+    image: ""
+  - title: Consumer-driven grid variability with EV and renewable integration
+    text: A quasi-dynamic PowerFactory study of EV and PV integration in the JUST distribution network across EV penetration levels and renewable scenarios, looking at transformer overloading, losses and ways to keep the grid stable as EV adoption grows.
+    image: ""
+  - title: ML-based fault classification and localisation in renewable-rich grids
+    text: A lightweight machine-learning method that classifies and locates faults in networks with EVs and PV using only three-phase voltage and current measurements, avoiding complex feature engineering.
+    image: ""
+  - title: Cost-effective grid resilience with EV, PV and electrolyser systems
+    text: High-level modelling and optimisation of PV, storage, demand response and interconnections to find affordable paths to resilience at high renewable penetration, with guidance for utilities and planners.
+    image: ""
+
+funded:
+  - title: "Enabling Resilience-Aware Photovoltaic Energy Systems in Bangladesh: A Technical Approach"
+    funder: UGC and JUST
+    period: Nov 2023 – Jun 2024
+    role: Principal Investigator
+  - title: "Agrophotovoltaic: Identifying the Prospects and Technical Challenges"
+    funder: UGC and JUST
+    period: Oct 2022 – Jun 2023
+    role: Co-Principal Investigator
+  - title: IoT-based Electrical Peak Demand and Power Quality Management
+    funder: UGC and JUST
+    period: Nov 2021 – Jun 2022
+    role: Co-Principal Investigator

@@ -1,0 +1,53 @@
+# =====================================================================
+#  LAB INFORMATION
+#  Change the text after the colon. Keep the spaces at the start of
+#  each line exactly as they are. Text with a colon (:) in it should be
+#  wrapped in "double quotes".
+# =====================================================================
+
+short_name: EG Lab
+name: Energy Grid Research Group
+department: Department of Electrical and Electronic Engineering
+university: Jashore University of Science and Technology (JUST)
+
+# One short sentence shown big at the top of the page.
+tagline: Data-driven planning and control for low-carbon, resilient power grids.
+
+# Logo and tab icon, stored in photos/site/. To change the logo, upload a new
+# file with the same name, or upload a new file and write its name here.
+logo: logo.png
+favicon: favicon.png
+
+# Wide photo shown under the welcome text (stored in photos/site/). "" hides it.
+campus_photo: campus.jpg
+campus_caption: Jashore University of Science and Technology campus
+
+# The welcome paragraph. Every line under "about: |" must start with two spaces.
+about: |
+  The Energy Grid (EG) Research Group is an active research initiative in the
+  Department of Electrical and Electronic Engineering at Jashore University of
+  Science and Technology (JUST). We work on sustainable energy systems, grid
+  modernisation and the move toward high shares of renewable energy, and we train
+  the next generation of power engineers and scientists.
+
+# Your Google Scholar ID: the part after "user=" in your Scholar link.
+# Publications are pulled from this profile automatically every week.
+google_scholar_id: 9YTCcVAAAAAJ
+
+contact:
+  person: Dr. Mehedi Hassan (Jewel)
+  email: m.hassan@just.edu.bd
+  phone: "+880 1718-945945"
+  address: Room 215, Sir Jagadish Chandra Bose Academic Building, JUST, Churamonkathi, Jashore-7408, Bangladesh
+
+# Buttons shown in the contact section and footer. Add or remove lines freely.
+links:
+  - label: Google Scholar
+    url: https://scholar.google.com/citations?user=9YTCcVAAAAAJ&hl=en
+  - label: University profile
+    url: https://just.edu.bd/t/teacher-jewel
+  - label: EEE, JUST
+    url: https://just.edu.bd
+
+# We are recruiting? Write a short note here, or leave it as "" to hide it.
+join_us: "We welcome motivated undergraduate and Master's students interested in power systems, renewable integration and AI for energy. Email Dr. Hassan with your CV and a short note on what you want to work on."

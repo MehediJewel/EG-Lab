@@ -1,0 +1,225 @@
+{
+  "updated": "2026-11-13",
+  "source": "Starter list (replaced by Google Scholar on the first automatic update)",
+  "profile": null,
+  "items": [
+    {
+      "title": "Mission-aware Model Predictive Control for tactical microgrids under monsoon uncertainty",
+      "authors": "MM Billah, M Hassan",
+      "venue": "Energy Reports",
+      "year": 2026,
+      "citations": 0,
+      "url": "https://doi.org/10.1016/j.egyr.2026.109838"
+    },
+    {
+      "title": "Control Challenges and Comparative Solutions for Stand-Alone GFMI-based PV Microgrid",
+      "authors": "F Ahmed, SG Tamang, AK Biswas, A Islam, B Biswas, M Hassan",
+      "venue": "SSRN Electronic Journal (preprint)",
+      "year": 2026,
+      "citations": 0,
+      "url": "https://doi.org/10.2139/ssrn.6469445"
+    },
+    {
+      "title": "Techno-economic and resilience optimization of a university microgrid: A dual-tool approach",
+      "authors": "MKH Kajal, R Hossain, M Hassan, S Dev, MR Islam, MM Hasan, J Islam",
+      "venue": "Energy Reports",
+      "year": 2025,
+      "citations": 3,
+      "url": "https://doi.org/10.1016/j.egyr.2025.10.034"
+    },
+    {
+      "title": "Configuring a Resilient Controller for a Renewable Energy Rich Grid",
+      "authors": "S Dev, M Hassan, NK Roy",
+      "venue": "International Conference on Electrical, Computer and Communication Engineering (ECCE)",
+      "year": 2025,
+      "citations": 1,
+      "url": "https://doi.org/10.1109/ecce64574.2025.11014022"
+    },
+    {
+      "title": "Optimal Operation of Hybrid Power System Using PV and CHP With Resilience Benefits",
+      "authors": "M Shawon, AK Biswas, M Hassan",
+      "venue": "International Conference on Electrical, Computer and Communication Engineering (ECCE)",
+      "year": 2025,
+      "citations": 1,
+      "url": "https://doi.org/10.1109/ecce64574.2025.11013814"
+    },
+    {
+      "title": "Effective Fast Load Shedding Scheme for Power Network Stability in a Floating LNG Plant",
+      "authors": "SM Fuad, K Arumuggam, M Hassan, NS Osman, ML Mohamad, AZ Awangku Rajid",
+      "venue": "International Conference on Electrical, Control and Computer Engineering (InECCE)",
+      "year": 2025,
+      "citations": 0,
+      "url": "https://doi.org/10.1109/inecce64959.2025.11150775"
+    },
+    {
+      "title": "Transient Analysis of LBLOCA with Subsequent Loss of Offsite Power and Loss of All AC Power in VVER-1200 Reactor",
+      "authors": "Asaduzzaman, M Hassan, K Hossain, S Alam, MO Faruk, KMJU Rumi",
+      "venue": "IOP Conference Series: Materials Science and Engineering",
+      "year": 2024,
+      "citations": 0,
+      "url": "https://doi.org/10.1088/1757-899x/1305/1/012012"
+    },
+    {
+      "title": "Dynamic Performance Analysis of Proton Exchange Membrane Fuel Cell for Power Quality Assessment",
+      "authors": "R Sarker, M Zareen, M Hassan",
+      "venue": "International Conference on the Developments in Renewable Energy Technology (ICDRET)",
+      "year": 2024,
+      "citations": 0,
+      "url": "https://doi.org/10.1109/icdret60388.2024.10503727"
+    },
+    {
+      "title": "Unveiling mega-prosumers for sustainable electricity generation in a developing country with techno-economic and emission analysis",
+      "authors": "M Al-Amin, M Hassan, I Khan",
+      "venue": "Journal of Cleaner Production 437, 140747",
+      "year": 2024,
+      "citations": 0,
+      "url": "",
+      "type": "journal"
+    },
+    {
+      "title": "Microgrid-based operational framework for grid resiliency enhancement: A case study at KUET campus in Bangladesh",
+      "authors": "AA Khan, K Kubra, MR Islam, MA Rahman, M Hassan",
+      "venue": "Energy Reports 11, 1752–1765",
+      "year": 2024,
+      "citations": 0,
+      "url": "",
+      "type": "journal"
+    },
+    {
+      "title": "Investigation into different types of uncertainties of power distribution system using Geographic Information System (GIS) Mapping",
+      "authors": "MA Rahman, R Roni, M Hassan, M Rahman, MR Islam",
+      "venue": "International Conference on Innovations in Science, Engineering and Technology (ICISET), Chittagong",
+      "year": 2024,
+      "citations": 0,
+      "url": "",
+      "type": "conference"
+    },
+    {
+      "title": "Optimizing Community Energy with Smart Hardware Integration in Offline Microgrid Systems",
+      "authors": "FE Tonny, MKH Kajal, T Anam, AMT Islam, MR Mobarrat, M Hassan",
+      "venue": "IEEE International Conference on Power, Electrical, Electronics and Industrial Applications (PEEIACON), Rajshahi",
+      "year": 2024,
+      "citations": 0,
+      "url": "",
+      "type": "conference"
+    },
+    {
+      "title": "Comparative Assessment of Frequency Stability Techniques in Inverter-Based Power Grid",
+      "authors": "F Emon, S Sajlin, M Hassan",
+      "venue": "International Conference on Electrical Engineering and Information & Communication Technology (ICEEICT), 870–875",
+      "year": 2024,
+      "citations": 0,
+      "url": "",
+      "type": "conference"
+    },
+    {
+      "title": "Impact of MMC-HVDC Control on Power System Dynamics: Various Concepts and Parameterization",
+      "authors": "M Hassan, R Shah, N Amjady, MJ Hossain, S Islam",
+      "venue": "International Conference on Energy Technologies for Future Grids (ETFG), Australia",
+      "year": 2023,
+      "citations": 0,
+      "url": "",
+      "type": "conference"
+    },
+    {
+      "title": "Threshold-free localized scheme for DC fault identification in multiterminal HVDC systems",
+      "authors": "M Hassan, MJ Hossain, R Shah",
+      "venue": "Electric Power Systems Research",
+      "year": 2022,
+      "citations": 4,
+      "url": "https://doi.org/10.1016/j.epsr.2022.108081"
+    },
+    {
+      "title": "Comparative investigation into key optoelectronic characteristics of semipolar InGaN blue laser diodes: A strategy to mitigate quantum-confine Stark effect",
+      "authors": "S Roy, SMT Ahsan, N Mondol, MM Hasan, D Kundu, SM Boby, M Hassan, et al.",
+      "venue": "Results in Physics 34, 105246",
+      "year": 2022,
+      "citations": 0,
+      "url": "",
+      "type": "journal"
+    },
+    {
+      "title": "Output fluctuations minimization of wind integrated hybrid power system using electronic coordinated control of governor and blade",
+      "authors": "MA Hossain, M Hassan, IM Mehedi, M Rahman, FT Zahura, et al.",
+      "venue": "Journal of Renewable and Sustainable Energy 14 (2)",
+      "year": 2022,
+      "citations": 0,
+      "url": "",
+      "type": "journal"
+    },
+    {
+      "title": "Lighting – The way to reducing electrical energy demand in university buildings in Bangladesh",
+      "authors": "MY Ali, I Khan, M Hassan",
+      "venue": "Facta Universitatis, Series: Electronics and Energetics 35 (3), 333–348",
+      "year": 2022,
+      "citations": 0,
+      "url": "",
+      "type": "journal"
+    },
+    {
+      "title": "DC Fault Identification in Multiterminal HVDC Systems Based on Reactor Voltage Gradient",
+      "authors": "M Hassan, MJ Hossain, R Shah",
+      "venue": "IEEE Access",
+      "year": 2021,
+      "citations": 9,
+      "url": "https://doi.org/10.1109/access.2021.3105919"
+    },
+    {
+      "title": "Impact of Meshed HVDC Grid Operation and Control on the Dynamics of AC/DC Systems",
+      "authors": "M Hassan, MJ Hossain, R Shah",
+      "venue": "IEEE Systems Journal",
+      "year": 2020,
+      "citations": 10,
+      "url": "https://doi.org/10.1109/jsyst.2020.3035379"
+    },
+    {
+      "title": "Frequency regulation of multiple asynchronous grids using adaptive droop in high-voltage direct current system",
+      "authors": "M Hassan, R Shah, MJ Hossain",
+      "venue": "IET Generation, Transmission & Distribution",
+      "year": 2020,
+      "citations": 10,
+      "url": "https://doi.org/10.1049/iet-gtd.2019.1073"
+    },
+    {
+      "title": "Mitigation of frequency disturbance in power systems during cyber-attack",
+      "authors": "M Hassan, NK Roy, M Sahabuddin",
+      "venue": "International Conference on Electrical, Computer & Telecommunication Engineering (ICECTE)",
+      "year": 2016,
+      "citations": 23,
+      "url": "https://doi.org/10.1109/icecte.2016.7879601"
+    },
+    {
+      "title": "Impact of cyber-attack on isolated power system",
+      "authors": "M Sahabuddin, B Dutta, M Hassan",
+      "venue": "International Conference on Electrical Engineering and Information Communication Technology (ICEEICT)",
+      "year": 2016,
+      "citations": 9,
+      "url": "https://doi.org/10.1109/ceeict.2016.7873088"
+    },
+    {
+      "title": "Static voltage stability assessment of power systems with FACTS devices",
+      "authors": "M Hassan, KM Shahiduzzaman, NK Roy",
+      "venue": "IOSR Journal of Electrical and Electronics Engineering 11 (2), 38–41",
+      "year": 2016,
+      "citations": 0,
+      "url": "",
+      "type": "journal"
+    },
+    {
+      "title": "Strain-dependent optical properties of [113]-oriented InGaAs/GaAs quantum well",
+      "authors": "S Roy, M Hassan, A Karmaker, S Poddar, MS Hossain",
+      "venue": "International Conference on Advances in Electrical Engineering (ICAEE)",
+      "year": 2015,
+      "citations": 2,
+      "url": "https://doi.org/10.1109/icaee.2015.7506864"
+    },
+    {
+      "title": "Damping of power system oscillations using STATCOM",
+      "authors": "M Hassan, NK Roy",
+      "venue": "International Conference on Electrical Information and Communication Technologies (EICT)",
+      "year": 2015,
+      "citations": 1,
+      "url": "https://doi.org/10.1109/eict.2015.7392012"
+    }
+  ]
+}
