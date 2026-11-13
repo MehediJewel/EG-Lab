@@ -5,49 +5,51 @@
 #  wrapped in "double quotes".
 # =====================================================================
 
-short_name: EG Lab
-name: Energy Grid Research Group
-department: Department of Electrical and Electronic Engineering
-university: Jashore University of Science and Technology (JUST)
+short_name: EG Lab · JUST
+department: Department of Electrical and Electronic Engineering (EEE)
+university: Jashore University of Science & Technology (JUST)
 
-# One short sentence shown big at the top of the page.
-tagline: Data-driven planning and control for low-carbon, resilient power grids.
+# Big title at the top. The second part is shown in gold.
+title_main: Energy Grid
+title_gold: (EG) Research Group
 
-# Logo and tab icon, stored in photos/site/. To change the logo, upload a new
-# file with the same name, or upload a new file and write its name here.
+# Lines under the title
+subtitle: Led by Dr. Mehedi Hassan (Jewel), Associate Professor
+keywords: Power & Energy Systems · Low-Carbon Energy · Grid Resilience
+
+# Paragraph in the top banner
+hero_text: The EG Research Group is an active research initiative exploring sustainable energy systems, supporting the modernization of the electricity grid and the transition toward high penetrations of renewable energy. We tackle critical challenges in complex energy systems through dynamic modeling, optimal design, and AI techniques, and we are committed to training the next generation of engineers and scientists.
+
+location: Jashore-7408, Bangladesh
+
+# Pictures, all stored in the folder photos/site/
+# To change one, upload a new file with the SAME name, or write a new name here.
 logo: logo.png
 favicon: favicon.png
+hero_photo: campus-hero.jpg       # background of the top banner
+about_photo: campus-about.jpg     # picture in the About section
+about_photo_caption: Jashore University of Science and Technology — campus view
+band_photo: campus-band.jpg       # wide "Our Campus" strip
 
-# Wide photo shown under the welcome text (stored in photos/site/). "" hides it.
-campus_photo: campus.jpg
-campus_caption: Jashore University of Science and Technology campus
+# "About the Lab" paragraphs. Each paragraph starts with "- ".
+about:
+  - The Energy Grid (EG) Research Group is an active research initiative within the Department of Electrical and Electronic Engineering (EEE) at Jashore University of Science and Technology (JUST). Our focus is on sustainable energy systems, supporting the modernization of the electricity grid and the transition toward high penetrations of renewable energy technologies.
+  - Our team, comprising motivated undergraduate and Master's students under Dr. Mehedi's supervision, works with institutional and external resources to bridge theory and real-world impact.
 
-# The welcome paragraph. Every line under "about: |" must start with two spaces.
-about: |
-  The Energy Grid (EG) Research Group is an active research initiative in the
-  Department of Electrical and Electronic Engineering at Jashore University of
-  Science and Technology (JUST). We work on sustainable energy systems, grid
-  modernisation and the move toward high shares of renewable energy, and we train
-  the next generation of power engineers and scientists.
+# "Our Campus" strip
+campus_title: Jashore University of Science and Technology
+campus_text: The EG Lab is based in the Sir Jagadish Chandra Bose Academic Building, on a green residential campus in Jashore, Bangladesh, home to faculty, researchers, and students working on the energy systems of tomorrow.
+campus_address: Churamonkathi, Ambottola, Jashore-7408, Bangladesh
 
 # Your Google Scholar ID: the part after "user=" in your Scholar link.
 # Publications are pulled from this profile automatically every week.
 google_scholar_id: 9YTCcVAAAAAJ
 
 contact:
-  person: Dr. Mehedi Hassan (Jewel)
   email: m.hassan@just.edu.bd
-  phone: "+880 1718-945945"
-  address: Room 215, Sir Jagadish Chandra Bose Academic Building, JUST, Churamonkathi, Jashore-7408, Bangladesh
+  phone: "+8801718945945"
+  profile_url: https://just.edu.bd/t/teacher-jewel
+  address: Associate Professor, Department of Electrical and Electronic Engineering (EEE), Jashore University of Science & Technology (JUST), Room No. 215, Sir Jagadish Chandra Bose Academic Building, Churamonkathi, Ambottola, Jashore-7408, Bangladesh
+  invite: Prospective Master's and undergraduate thesis students are welcome to reach out about research opportunities in power and energy systems with the EG Research Group.
 
-# Buttons shown in the contact section and footer. Add or remove lines freely.
-links:
-  - label: Google Scholar
-    url: https://scholar.google.com/citations?user=9YTCcVAAAAAJ&hl=en
-  - label: University profile
-    url: https://just.edu.bd/t/teacher-jewel
-  - label: EEE, JUST
-    url: https://just.edu.bd
-
-# We are recruiting? Write a short note here, or leave it as "" to hide it.
-join_us: "We welcome motivated undergraduate and Master's students interested in power systems, renewable integration and AI for energy. Email Dr. Hassan with your CV and a short note on what you want to work on."
+footer_right: Led by Dr. Mehedi Hassan (Jewel) · Power & Energy Systems

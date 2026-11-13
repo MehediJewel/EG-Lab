@@ -1,97 +1,108 @@
 # =====================================================================
 #  PEOPLE
 #
-#  PHOTOS: upload a square-ish photo to the folder photos/members/
-#  and write its file name after "photo:". Example: photo: billah.jpg
-#  No photo yet? Leave it as "" and the site shows the person's initials.
-#  To replace a photo, upload a new file with the SAME name.
-#
-#  ADD A PERSON: copy one block (from "- name:" down to the line before
+#  ADD A STUDENT: copy one block (from "- name:" down to the line before
 #  the next "- name:"), paste it under the right group, change the text.
 #
-#  STUDENT GRADUATED? Cut their block and paste it under "Alumni".
-#  Add a "now:" line to say where they went (optional).
+#  PHOTOS (optional): upload a photo to photos/members/ and write its
+#  file name after "photo:", e.g. photo: abu-salman.jpg
+#  Leave it as "" to show the card without a photo.
+#  To replace a photo, upload a new file with the SAME name.
+#
+#  STUDENT GRADUATED? Cut their block and paste it under the past group.
 # =====================================================================
 
 lead:
   name: Dr. Mehedi Hassan (Jewel)
-  title: Associate Professor, Department of EEE, JUST
-  role: Principal Investigator, EG Lab
+  title: Associate Professor · EEE, JUST
+  badge: Lead · EG Research Group
   photo: dr-mehedi-hassan.jpg
-  bio: |
-    Dr. Hassan received his Ph.D. in Engineering from Macquarie University, Sydney, in 2022, with
-    research on HVDC grid dynamics, DC fault identification and control of AC/DC power systems.
-    He joined the Department of EEE at JUST in 2015, where he is now an Associate Professor. His
-    research focuses on data-driven decision-making for optimising low-carbon energy systems and
-    enhancing grid resilience.
+  bio:
+    - Dr. M. Hassan received his Ph.D. in Engineering from Macquarie University, Sydney, Australia, in 2022. He earned his B.Sc. and M.Sc. degrees in Electrical and Electronic Engineering from Khulna University of Engineering and Technology (KUET), Bangladesh, in 2010 and 2016, respectively.
+    - He joined the Department of Electrical and Electronic Engineering at Jashore University of Science & Technology (JUST) in 2015, where he is now an Associate Professor. His current research focuses on data-driven decision-making for optimizing low-carbon energy systems and enhancing grid resilience.
   education:
-    - Ph.D. in Engineering, Macquarie University, Sydney, Australia (2022)
-    - M.Sc. in EEE, Khulna University of Engineering & Technology (2016)
-    - B.Sc. in EEE, Khulna University of Engineering & Technology (2010)
-  email: m.hassan@just.edu.bd
+    - degree: Ph.D. in Engineering
+      institution: Macquarie University
+      where: Sydney, Australia · 2022
+      note: Dissertation research on HVDC grid dynamics, DC fault identification, and control of AC/DC power systems.
+    - degree: M.Sc. in Electrical and Electronic Engineering
+      institution: Khulna University of Engineering and Technology (KUET)
+      where: Khulna, Bangladesh · 2016
+      note: ""
+    - degree: B.Sc. in Electrical and Electronic Engineering
+      institution: Khulna University of Engineering and Technology (KUET)
+      where: Khulna, Bangladesh · 2010
+      note: ""
+  positions:
+    - role: Associate Professor
+      place: Dept. of EEE, Jashore University of Science & Technology (JUST)
+      when: Present
+    - role: Principal Investigator, Energy Grid (EG) Research Group
+      place: Jashore University of Science & Technology (JUST)
+      when: Present
+    - role: Faculty Member, Dept. of EEE
+      place: Jashore University of Science & Technology (JUST), joined 2015
+      when: 2015 – Present
 
 groups:
-  - title: Master's students
+  - title: Master Students
     people:
       - name: Md Mootasim Billah
-        topic: Defence-centric microgrid design
         email: m231104.eee@student.just.edu.bd
+        topic: Defense-Centric Microgrid Design
         photo: ""
       - name: N M Nafiur Rahman Mazumder
-        topic: Smart grid (cyber-physical) resilience
         email: m231105.eee@student.just.edu.bd
+        topic: Smart Grid (CPS) Resilience
         photo: ""
       - name: Md. Abu Salman
-        topic: Intelligent fault localisation in modern grids
         email: m241104.eee@student.just.edu.bd
+        topic: Intelligent fault localization in modern grids
         photo: ""
       - name: Mahfujur Rahman
-        topic: Multi-source DC energy hubs
         email: m241103.eee@student.just.edu.bd
+        topic: Multi-source DC Energy Hubs
         photo: ""
 
-  - title: Undergraduate students
+  - title: Undergraduate Students
+    badge: Present Supervision
     people:
       - name: Shah Mohammad Raowaha Rumi
-        topic: Degradation-aware intelligent BESS management for agricultural microgrids
         email: 201110.eee@student.just.edu.bd
+        topic: Degradation-Aware Intelligent BESS Management for Agricultural Microgrids
         photo: ""
       - name: Shakib Hasan Shawon
-        topic: Degradation-aware intelligent BESS management for agricultural microgrids
         email: 201111.eee@student.just.edu.bd
+        topic: Degradation-Aware Intelligent BESS Management for Agricultural Microgrids
         photo: ""
       - name: Rahul Biswas
-        topic: Degradation-aware intelligent BESS management for agricultural microgrids
         email: 201115.eee@student.just.edu.bd
+        topic: Degradation-Aware Intelligent BESS Management for Agricultural Microgrids
         photo: ""
       - name: Mursalin Biswas Emon
-        topic: EV battery health monitoring under uncertainty
         email: 201114.eee@student.just.edu.bd
+        topic: EV-Battery Health monitoring with uncertainty
         photo: ""
       - name: Rifat Islam Rony
-        topic: EV battery health monitoring under uncertainty
         email: 201123.eee@student.just.edu.bd
+        topic: EV-Battery Health monitoring with uncertainty
         photo: ""
 
-  - title: Alumni
+  # "collapsed: true" shows this group as a fold-out list.
+  - title: Past Undergraduate Supervision
+    badge: 2018–2024 batch
+    collapsed: true
+    note: Alumni of the lab have gone on to funded MSc and PhD positions at the University of Toronto, University of Malaya, and beyond.
     people:
-      - name: Fouziya Easmin Tonny
-        topic: ML-based fault diagnostics
-        now: Fully funded PhD, University of Toronto
-        photo: ""
-      - name: Md Kamrul Hassan Kajal
-        topic: Grid resilience enhancement
-        now: Fully funded MSc, University of Malaya
-        photo: ""
       - name: Mahfujur Rahman
-        topic: EV impact analysis
-        photo: ""
+        topic: EV Impact Analysis
+      - name: Fouziya Easmin Tonny
+        topic: ML-based Fault Diagnostics
+      - name: Md Kamrul Hassan Kajal
+        topic: Grid Resilience Enhancement
       - name: A.M Tafikul Islam
-        topic: EV impact analysis
-        photo: ""
+        topic: EV Impact Analysis
       - name: Tasnim Anam
-        topic: ML-based fault diagnostics
-        photo: ""
+        topic: ML-based Fault Diagnostics
       - name: Rabbi Hossain
-        topic: Grid resilience enhancement
-        photo: ""
+        topic: Grid Resilience Enhancement

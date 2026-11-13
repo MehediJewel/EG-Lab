@@ -1,60 +1,51 @@
 # =====================================================================
 #  RESEARCH
-#  Three parts: focus areas, current research, and funded projects.
 #  To add an item, copy an existing block (from the "-" down to the
 #  next "-"), paste it, and change the text.
-#  "image" is optional: upload a picture to photos/research/ and write
-#  its file name, or leave it as "".
 # =====================================================================
 
-focus_areas:
-  - title: Grid modernisation
-    text: Upgrading grid infrastructure so it can host high levels of solar, wind and storage.
-  - title: Low-carbon optimisation
-    text: Data-driven planning and operation of low-carbon energy systems, from campuses to microgrids.
-  - title: Resilience
-    text: Keeping evolving power networks secure and reliable through faults, extreme weather and cyber threats.
+intro: Our research aims to accelerate the transition to sustainable energy — modernizing grid infrastructure, optimizing low-carbon systems through data-driven approaches, and enhancing resilience in evolving power networks.
+
+# Three short goals shown with a tick
+mission:
+  - Modernizing grid infrastructure for high renewable energy integration.
+  - Optimizing low-carbon systems through data-driven approaches.
+  - Enhancing resilience in evolving power networks.
 
 interests:
-  - title: Data-driven decision-making
-    text: Optimising low-carbon energy systems with data, from forecasting to real-time operation.
-  - title: Grid resilience and modernisation
-    text: Preparing networks for high renewable shares and keeping them resilient as they evolve.
-  - title: Microgrids and hybrid energy systems
-    text: Mission-aware robust control, defence-centric design and techno-economic optimisation.
-  - title: AI for power systems
-    text: Machine-learning fault classification, localisation and diagnostics in renewable-rich grids.
-  - title: EV and battery systems
-    text: EV impact analysis, battery health under uncertainty and degradation-aware BESS management.
-  - title: HVDC and AC/DC dynamics
-    text: DC fault identification in multiterminal HVDC, adaptive droop and HVDC control impacts.
-
-methods: Dynamic modelling, optimal design, model predictive control, DIgSILENT PowerFactory simulation and machine learning.
+  - title: Data-Driven Decision-Making
+    text: Optimizing low-carbon energy systems through data-driven approaches, from forecasting to real-time operation.
+  - title: Grid Resilience & Modernization
+    text: Modernizing grid infrastructure for high renewable energy integration and enhancing resilience in evolving power networks.
+  - title: Microgrids & Hybrid Energy Systems
+    text: Mission-aware robust control, defense-centric design, and techno-economic optimization of islanded and grid-connected microgrids.
+  - title: AI for Power Systems
+    text: Machine-learning-based fault classification, localization, and diagnostics in renewable-integrated power systems.
+  - title: EV & Battery Systems
+    text: EV impact analysis, battery health monitoring under uncertainty, and degradation-aware intelligent BESS management.
+  - title: HVDC & AC/DC System Dynamics
+    text: DC fault identification in multiterminal HVDC systems, adaptive droop control, and impact of HVDC control on power system dynamics.
 
 current:
-  - title: Mission-aware robust MPC for tactical microgrids under monsoon uncertainty
-    text: A mission-aware model predictive control framework for a hybrid PV–battery–diesel microgrid in remote, mission-critical settings. It keeps power reliable, cuts fuel use, allows quiet operation under uncertain solar output and adds resilience without extra capacity.
-    image: ""
-  - title: Consumer-driven grid variability with EV and renewable integration
-    text: A quasi-dynamic PowerFactory study of EV and PV integration in the JUST distribution network across EV penetration levels and renewable scenarios, looking at transformer overloading, losses and ways to keep the grid stable as EV adoption grows.
-    image: ""
-  - title: ML-based fault classification and localisation in renewable-rich grids
-    text: A lightweight machine-learning method that classifies and locates faults in networks with EVs and PV using only three-phase voltage and current measurements, avoiding complex feature engineering.
-    image: ""
-  - title: Cost-effective grid resilience with EV, PV and electrolyser systems
-    text: High-level modelling and optimisation of PV, storage, demand response and interconnections to find affordable paths to resilience at high renewable penetration, with guidance for utilities and planners.
-    image: ""
+  - title: Mission-Aware Robust MPC for Tactical Microgrids under Monsoon Uncertainty
+    text: Intelligent operation of hybrid microgrids in remote and mission-critical environments. A mission-aware Model Predictive Control (MPC) framework is developed for a hybrid PV–battery–diesel system, where mission priorities are directly incorporated into the control strategy, improving resilience and operational efficiency without requiring additional capacity.
+  - title: Consumer-Driven Grid Variability with Electric Vehicle and Renewable Integration
+    text: Integration of EVs and photovoltaic (PV) systems within a small-scale distribution network at JUST, using DIgSILENT PowerFactory quasi-dynamic simulation for 2024. The study evaluates system performance under varying EV penetration levels, highlighting transformer overloading and increased system losses, and investigates solutions for a stable, resilient grid.
+  - title: Machine Learning-based Fault Classification and Localization in Renewable Integrated Power Systems
+    text: A simplified machine learning-based approach for fault classification and localization in power systems with integrated EV and PV, using only three-phase voltage and current data from DIgSILENT PowerFactory simulations, avoiding intricate feature engineering while aiming for accurate, real-time-ready fault diagnostics.
+  - title: Optimizing Grid Resilience with Cost-Effective Integration of EV, PV, and Electrolyzer Systems
+    text: Economically viable pathways to enhance grid resilience at high renewable penetration. Through high-level modeling and optimization, the study explores combinations of solar PV, energy storage, demand response, and grid interconnections, offering strategic insights for policymakers, utilities, and energy planners.
 
 funded:
   - title: "Enabling Resilience-Aware Photovoltaic Energy Systems in Bangladesh: A Technical Approach"
-    funder: UGC and JUST
-    period: Nov 2023 – Jun 2024
-    role: Principal Investigator
+    funder: UGC and Jashore University of Science and Technology
+    period: Nov 2023 – June 2024
+    role: Principal Investigator (PI)
   - title: "Agrophotovoltaic: Identifying the Prospects and Technical Challenges"
-    funder: UGC and JUST
-    period: Oct 2022 – Jun 2023
-    role: Co-Principal Investigator
+    funder: UGC and Jashore University of Science and Technology
+    period: Oct 2022 – June 2023
+    role: Co-Principal Investigator (Co-PI)
   - title: IoT-based Electrical Peak Demand and Power Quality Management
-    funder: UGC and JUST
-    period: Nov 2021 – Jun 2022
-    role: Co-Principal Investigator
+    funder: UGC and Jashore University of Science and Technology
+    period: Nov 2021 – June 2022
+    role: Co-Principal Investigator (Co-PI)

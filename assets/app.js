@@ -8,271 +8,308 @@
     });
   };
   var list = function (v) { return Array.isArray(v) ? v : []; };
+  var flat = function (s) { return String(s || "").replace(/\s+/g, " ").trim(); };
+  var ICON = {
+    check: '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    pin: '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg>',
+    mail: '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3 7 9 6 9-6" fill="none" stroke="currentColor" stroke-width="2"/></svg>',
+    phone: '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
+    chev: '<svg class="chev" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+  };
 
   function load(path) {
     return fetch(path, { cache: "no-cache" }).then(function (r) {
-      if (!r.ok) throw new Error(path + " (" + r.status + ")");
+      if (!r.ok) throw new Error("file not found (" + r.status + ")");
       return r.text();
     }).then(function (t) {
       return path.slice(-5) === ".json" ? JSON.parse(t) : jsyaml.load(t);
     }).catch(function (e) {
       console.error("Could not read " + path, e);
-      showError(path, e);
+      var box = $("load-error");
+      if (!box) {
+        box = document.createElement("div");
+        box.id = "load-error"; box.className = "load-error"; box.setAttribute("role", "alert");
+        document.querySelector("main").prepend(box);
+      }
+      box.innerHTML += "<div><b>Problem in " + esc(path) + ":</b> " + esc(String(e.message || e).split("\n")[0]) +
+        ". Check the spacing and quotes near the line mentioned, or undo your last change.</div>";
       return null;
     });
   }
+  function img(folder, file) { return file ? folder + encodeURI(file) : ""; }
 
-  function showError(path, e) {
-    var box = $("load-error");
-    if (!box) {
-      box = document.createElement("div");
-      box.id = "load-error";
-      box.setAttribute("role", "alert");
-      box.style.cssText = "margin:16px auto;max-width:1080px;padding:12px 16px;border:2px solid var(--ph-r);border-radius:6px;background:var(--surface);color:var(--fg);font-size:14px";
-      document.querySelector("main").prepend(box);
-    }
-    var msg = String(e && e.message || e).split("\n")[0];
-    box.innerHTML += "<div><b>Problem in " + esc(path) + ":</b> " + esc(msg) +
-      ". Check spacing and quotes near the line mentioned, or undo your last change.</div>";
-  }
-
-  function initials(name) {
-    var parts = String(name || "").replace(/\(.*?\)/g, "").replace(/\b(Dr|Md|Mst|Mr|Ms)\.?\s/gi, "").trim().split(/\s+/);
-    return ((parts[0] || "")[0] || "").concat((parts.length > 1 ? parts[parts.length - 1][0] : "") || "").toUpperCase();
-  }
-
-  function avatar(photo, name, folder) {
-    var ini = esc(initials(name));
-    if (!photo) return '<span class="avatar" aria-hidden="true">' + ini + "</span>";
-    return '<img class="avatar" src="' + esc(folder + photo) + '" alt="' + esc(name) +
-      '" loading="lazy" onerror="this.outerHTML=\'<span class=&quot;avatar&quot; aria-hidden=&quot;true&quot;>' + ini + '</span>\'">';
-  }
-
-  /* ---------- Site ---------- */
+  /* ---------- Site, hero, contact ---------- */
   function renderSite(s) {
     if (!s) return;
-    document.title = (s.short_name || "Lab") + " · " + (s.name || "");
-    if (s.logo) {
-      $("brand").insertAdjacentHTML("afterbegin", '<img src="photos/site/' + esc(s.logo) + '" alt="">');
-      $("brand").classList.add("has-logo");
-      $("hero-logo").src = "photos/site/" + s.logo;
-      $("hero-logo").hidden = false;
-    }
-    if (s.favicon && $("favicon")) $("favicon").href = "photos/site/" + s.favicon;
-    if (s.campus_photo) {
-      $("campus-img").src = "photos/site/" + s.campus_photo;
-      $("campus-img").alt = s.campus_caption || "";
-      $("campus-cap").textContent = s.campus_caption || "";
-      $("campus").hidden = false;
-    }
+    var c = s.contact || {};
+    if (s.logo) ["nav-logo", "hero-logo", "foot-logo"].forEach(function (id) { $(id).src = img("photos/site/", s.logo); });
+    if (s.favicon) $("favicon").href = img("photos/site/", s.favicon);
+    if (s.hero_photo) $("hero-bg").src = img("photos/site/", s.hero_photo);
     $("brand-name").textContent = s.short_name || "";
     $("hero-dept").textContent = [s.department, s.university].filter(Boolean).join(" · ");
-    $("hero-name").textContent = s.name || "";
-    $("hero-tagline").textContent = s.tagline || "";
-    $("about-text").textContent = (s.about || "").replace(/\s+/g, " ").trim();
-    $("foot-name").textContent = "© " + new Date().getFullYear() + " " + [s.short_name, s.university].filter(Boolean).join(", ");
+    $("title-main").textContent = s.title_main || "";
+    $("title-gold").textContent = s.title_gold || "";
+    $("hero-sub").textContent = s.subtitle || "";
+    $("hero-kw").textContent = s.keywords || "";
+    $("hero-text").textContent = flat(s.hero_text);
+    $("hero-loc").textContent = s.location || "";
 
-    var c = s.contact || {};
-    var rows = [["Lead", c.person], ["Email", c.email], ["Phone", c.phone], ["Office", c.address]];
-    $("contact-box").innerHTML = rows.filter(function (r) { return r[1]; }).map(function (r) {
-      return '<div class="row"><span class="k">' + r[0] + '</span><span class="v">' + esc(r[1]) + "</span></div>";
-    }).join("");
-    $("links").innerHTML = list(s.links).map(function (l) {
-      return '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + "</a>";
-    }).join("");
-    if (s.join_us) { $("join").hidden = false; $("join-text").textContent = s.join_us; }
-  }
+    $("about-text").innerHTML = list(s.about).map(function (p) { return "<p>" + esc(flat(p)) + "</p>"; }).join("");
+    if (s.about_photo) {
+      $("about-img").src = img("photos/site/", s.about_photo);
+      $("about-img").alt = s.about_photo_caption || "";
+      $("about-cap").textContent = s.about_photo_caption || "";
+    } else { $("about-fig").hidden = true; }
 
-  /* ---------- Research ---------- */
-  function renderResearch(r) {
-    if (!r) return;
-    $("focus").innerHTML = list(r.focus_areas).map(function (f) {
-      return "<li><div><b>" + esc(f.title) + "</b><span>" + esc(f.text) + "</span></div></li>";
-    }).join("");
-    $("interests").innerHTML = list(r.interests).map(function (f) {
-      return "<div><b>" + esc(f.title) + "</b><span>" + esc(f.text) + "</span></div>";
-    }).join("");
-    $("methods").textContent = r.methods ? "Methods: " + r.methods : "";
-    $("projects").innerHTML = list(r.current).map(function (p) {
-      return '<article class="project">' +
-        (p.image ? '<img src="photos/research/' + esc(p.image) + '" alt="" loading="lazy" onerror="this.remove()">' : "") +
-        "<div><h3>" + esc(p.title) + "</h3><p>" + esc(p.text) + "</p></div></article>";
-    }).join("");
-    $("funded").innerHTML = list(r.funded).map(function (f) {
-      return "<li><div><b>" + esc(f.title) + "</b>" + (f.role ? '<span class="role">' + esc(f.role) + "</span>" : "") +
-        '<div class="meta">' + esc(f.funder) + '</div></div><span class="when">' + esc(f.period) + "</span></li>";
-    }).join("");
+    if (s.band_photo) $("band-bg").src = img("photos/site/", s.band_photo);
+    $("campus-title").textContent = s.campus_title || "";
+    $("campus-text").textContent = flat(s.campus_text);
+    $("campus-addr").textContent = s.campus_address || "";
+
+    var mail = c.email ? "mailto:" + c.email : "#contact";
+    var tel = c.phone ? "tel:" + String(c.phone).replace(/[^\d+]/g, "") : "#contact";
+    $("btn-email").href = mail; $("foot-email").href = mail;
+    $("btn-call").href = tel;
+    if (c.profile_url) { $("btn-profile").href = c.profile_url; $("foot-profile").href = c.profile_url; }
+    else { $("btn-profile").hidden = true; $("foot-profile").hidden = true; }
+    if (!c.phone) $("btn-call").hidden = true;
+    $("invite").textContent = flat(c.invite);
+    $("foot-contact").innerHTML =
+      (c.address ? "<div>" + ICON.pin + "<p>" + esc(flat(c.address)) + "</p></div>" : "") +
+      (c.email ? "<div>" + ICON.mail + '<p><a href="mailto:' + esc(c.email) + '">' + esc(c.email) + "</a></p></div>" : "") +
+      (c.phone ? "<div>" + ICON.phone + '<p><a href="' + esc(tel) + '">' + esc(c.phone) + "</a></p></div>" : "");
+    $("foot-copy").textContent = "© " + new Date().getFullYear() + " " + [s.title_main, s.title_gold].filter(Boolean).join(" ") + " — " + (s.university || "");
+    $("foot-right").textContent = s.footer_right || "";
   }
 
   /* ---------- People ---------- */
   function renderPeople(m) {
-    if (!m) return;
-    var L = m.lead;
-    if (L) {
-      $("lead").innerHTML = avatar(L.photo, L.name, "photos/members/") +
-        "<div><h3>" + esc(L.name) + '</h3><div class="title">' + esc(L.title) + "</div>" +
-        (L.role ? '<div class="role">' + esc(L.role) + "</div>" : "") +
-        (L.bio ? "<p>" + esc(String(L.bio).replace(/\s+/g, " ").trim()) + "</p>" : "") +
-        (list(L.education).length ? "<ul>" + L.education.map(function (e) { return "<li>" + esc(e) + "</li>"; }).join("") + "</ul>" : "") +
-        (L.email ? '<div class="mail">' + esc(L.email) + "</div>" : "") + "</div>";
-    } else { $("lead").hidden = true; }
-
-    $("groups").innerHTML = list(m.groups).map(function (g) {
-      var ppl = list(g.people);
-      if (!ppl.length) return "";
-      return '<h3 class="group-h">' + esc(g.title) + " <small>" + ppl.length + '</small></h3><div class="people">' +
-        ppl.map(function (p) {
-          return '<div class="person">' + avatar(p.photo, p.name, "photos/members/") + "<div><b>" + esc(p.name) + "</b>" +
-            (p.topic ? '<div class="topic">' + esc(p.topic) + "</div>" : "") +
-            (p.now ? '<div class="now">' + esc(p.now) + "</div>" : "") +
-            (p.email ? '<div class="mail">' + esc(p.email) + "</div>" : "") + "</div></div>";
-        }).join("") + "</div>";
+    if (!m) return 0;
+    var L = m.lead || {};
+    $("pi-bio").innerHTML = list(L.bio).map(function (p) { return "<p>" + esc(flat(p)) + "</p>"; }).join("");
+    $("lead-card").innerHTML =
+      (L.photo ? '<div class="ph"><img src="' + esc(img("photos/members/", L.photo)) + '" alt="' + esc(L.name) + '"></div>' : "") +
+      "<figcaption><b>" + esc(L.name) + '</b><div class="t">' + esc(L.title) + "</div>" +
+      (L.badge ? '<span class="badge">' + esc(L.badge) + "</span>" : "") + "</figcaption>";
+    $("education").innerHTML = list(L.education).map(function (e) {
+      return "<li><b>" + esc(e.degree) + '</b><div class="i">' + esc(e.institution) + '</div><div class="w">' + esc(e.where) + "</div>" +
+        (e.note ? '<div class="n">' + esc(e.note) + "</div>" : "") + "</li>";
     }).join("");
+    $("positions").innerHTML = list(L.positions).map(function (p) {
+      return '<li class="card"><b>' + esc(p.role) + '</b><div class="p">' + esc(p.place) + '</div><div class="w">' + esc(p.when) + "</div></li>";
+    }).join("");
+
+    var total = 0;
+    $("groups").innerHTML = list(m.groups).map(function (g, gi) {
+      var ppl = list(g.people);
+      total += ppl.length;
+      if (!ppl.length) return "";
+      if (g.collapsed) {
+        return '<div class="fold card" data-fold><button type="button" aria-expanded="false"><span>' + esc(g.title) +
+          '<span class="outline">' + ppl.length + " students" + (g.badge ? " · " + esc(g.badge) : "") + "</span></span>" + ICON.chev +
+          '</button><div class="fold-body" hidden><div class="past">' + ppl.map(function (p) {
+            return "<div><span>" + esc(p.name) + "</span><span>" + esc(p.topic || p.now || "") + "</span></div>";
+          }).join("") + "</div>" + (g.note ? '<p class="fold-note">' + esc(g.note) + "</p>" : "") + "</div></div>";
+      }
+      var badge = g.badge ? '<span class="cnt goldc">' + esc(g.badge) + " · " + ppl.length + "</span>" : '<span class="cnt">' + ppl.length + "</span>";
+      return '<div><h3 class="g-h">' + esc(g.title) + " " + badge + '</h3><div class="students' + (ppl.length % 4 ? " three" : "") + '">' +
+        ppl.map(function (p) {
+          return '<div class="student card">' +
+            (p.photo ? '<img src="' + esc(img("photos/members/", p.photo)) + '" alt="' + esc(p.name) + '" loading="lazy" onerror="this.remove()">' : "") +
+            "<b>" + esc(p.name) + "</b>" +
+            (p.email ? '<a class="mail" href="mailto:' + esc(p.email) + '">' + esc(p.email) + "</a>" : "") +
+            (p.topic ? '<p class="topic"><span>Topic:</span> ' + esc(p.topic) + "</p>" : "") +
+            (p.now ? '<div class="now">' + esc(p.now) + "</div>" : "") + "</div>";
+        }).join("") + "</div></div>";
+    }).join("");
+    Array.prototype.forEach.call(document.querySelectorAll("[data-fold] > button"), function (b) {
+      b.addEventListener("click", function () {
+        var open = b.getAttribute("aria-expanded") !== "true";
+        b.setAttribute("aria-expanded", open);
+        b.parentNode.classList.toggle("open", open);
+        b.nextElementSibling.hidden = !open;
+      });
+    });
+    return total;
+  }
+
+  /* ---------- Research ---------- */
+  function renderResearch(r) {
+    if (!r) return 0;
+    $("research-intro").textContent = flat(r.intro);
+    $("mission").innerHTML = list(r.mission).map(function (m) { return '<div class="card">' + ICON.check + "<span>" + esc(m) + "</span></div>"; }).join("");
+    $("interests").innerHTML = list(r.interests).map(function (x) {
+      return '<div class="card"><h4>' + esc(x.title) + "</h4><p>" + esc(x.text) + "</p></div>";
+    }).join("");
+    $("current").innerHTML = list(r.current).map(function (x, i) {
+      return '<div class="card"><h4><span class="num">' + String(i + 1).padStart(2, "0") + "</span>" + esc(x.title) + "</h4><p>" + esc(flat(x.text)) + "</p></div>";
+    }).join("");
+    $("funded").innerHTML = list(r.funded).map(function (x) {
+      return '<div class="card"><h4>' + esc(x.title) + '</h4><div class="meta"><span><b>Funding:</b> ' + esc(x.funder) +
+        "</span><span><b>Duration:</b> " + esc(x.period) + '</span><span class="tagpill">' + esc(x.role) + "</span></div></div>";
+    }).join("");
+    return list(r.funded).length;
   }
 
   /* ---------- Publications ---------- */
-  var PUBS = [], filterType = "all", query = "";
-
+  var PUBS = [], TAB = "journal";
+  var TABS = [["journal", "Journal Papers"], ["conference", "Conference Papers"], ["other", "Preprints & Other"]];
+  function norm(t) { return String(t || "").toLowerCase().replace(/[^a-z0-9]+/g, ""); }
   function guessType(p) {
-    if (p.type) return String(p.type).toLowerCase();
+    if (p.type) { var t = String(p.type).toLowerCase(); return t === "preprint" ? "other" : t; }
     var v = (p.venue || "") + " " + (p.url || "");
-    if (/ssrn|arxiv|preprint|techrxiv|research square|under review/i.test(v)) return "preprint";
-    if (/conference|proceedings|proc\.|symposium|workshop|congress|summit|ICE|PEEIACON|ICISET|ICDRET|ICEEICT|ECCE|EICT|ICAEE|ICECTE/.test(v)) return "conference";
+    if (/ssrn|arxiv|preprint|techrxiv|research square|under review|thesis|patent/i.test(v)) return "other";
+    if (/conference|proceedings|proc\.|symposium|workshop|congress|summit|\bICE|PEEIACON|ICISET|ICDRET|ICEEICT|ECCE|EICT|ICAEE|ICECTE|IOP Conf/i.test(v)) return "conference";
     if (!p.venue) return "other";
     return "journal";
   }
-  function norm(t) { return String(t || "").toLowerCase().replace(/[^a-z0-9]+/g, ""); }
-
   function preparePubs(data, extra) {
     var items = list(data && data.items).slice();
     extra = extra || {};
-    var hide = list(extra.hide).map(norm).filter(Boolean);
-    var have = {};
+    var hide = list(extra.hide).map(norm).filter(Boolean), have = {};
     items.forEach(function (p) { have[norm(p.title)] = true; });
     list(extra.add).forEach(function (p) { if (p && p.title && !have[norm(p.title)]) items.push(p); });
-    items = items.filter(function (p) {
-      var n = norm(p.title);
-      return n && !hide.some(function (h) { return n.indexOf(h) === 0; });
-    });
+    items = items.filter(function (p) { var n = norm(p.title); return n && !hide.some(function (h) { return n.indexOf(h) === 0; }); });
     items.forEach(function (p) { p._type = guessType(p); p._year = parseInt(p.year, 10) || 0; });
     items.sort(function (a, b) { return b._year - a._year || (b.citations || 0) - (a.citations || 0); });
     return items;
   }
-
-  function renderMetrics(data) {
-    var p = data && data.profile;
-    var n = PUBS.length;
-    var cells = [["Publications", n]];
-    if (p) {
-      if (p.citations != null) cells.push(["Citations", p.citations]);
-      if (p.h_index != null) cells.push(["h-index", p.h_index]);
-      if (p.i10_index != null) cells.push(["i10-index", p.i10_index]);
-    }
-    $("metrics").innerHTML = cells.map(function (c) {
-      return "<div><dt>" + c[0] + "</dt><dd>" + Number(c[1]).toLocaleString() + "</dd></div>";
+  function renderTabs() {
+    $("pub-tabs").innerHTML = TABS.map(function (t) {
+      var n = PUBS.filter(function (p) { return p._type === t[0]; }).length;
+      if (!n) return "";
+      return '<button type="button" role="tab" class="tab' + (t[0] === TAB ? " on" : "") + '" data-tab="' + t[0] + '" aria-selected="' + (t[0] === TAB) + '">' +
+        t[1] + ' <span class="n">' + n + "</span></button>";
     }).join("");
-    if (data) {
-      $("pub-note").textContent = "Source: " + (data.source || "Google Scholar") + (data.updated ? " · updated " + data.updated : "");
-      $("foot-updated").textContent = data.updated ? "Publications updated " + data.updated : "";
-    }
   }
-
   function renderPubs() {
-    var q = query.toLowerCase();
-    var shown = PUBS.filter(function (p) {
-      if (filterType !== "all" && p._type !== filterType) return false;
-      if (!q) return true;
-      return [p.title, p.authors, p.venue, p.year].join(" ").toLowerCase().indexOf(q) !== -1;
-    });
-    if (!shown.length) { $("pubs").innerHTML = '<p class="empty">No publications match.</p>'; return; }
-    var byYear = {}, years = [];
-    shown.forEach(function (p) {
-      var y = p._year || "Other";
-      if (!byYear[y]) { byYear[y] = []; years.push(y); }
-      byYear[y].push(p);
-    });
-    $("pubs").innerHTML = years.map(function (y) {
-      return '<section class="year"><h3>' + y + '</h3><ol class="pubs">' + byYear[y].map(function (p) {
-        var title = p.url ? '<a class="t" href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.title) + "</a>"
-          : '<span class="t">' + esc(p.title) + "</span>";
-        var tags = '<span class="tags"><span class="tag">' + esc(p._type) + "</span>" +
-          (p.citations ? '<span class="tag cite">' + p.citations + " cited</span>" : "") + "</span>";
-        return '<li class="pub">' + title + (p.authors ? '<div class="a">' + esc(p.authors) + "</div>" : "") +
-          '<div class="v">' + esc(p.venue || "") + tags + "</div></li>";
-      }).join("") + "</ol></section>";
+    var shown = PUBS.filter(function (p) { return p._type === TAB; });
+    $("pubs").innerHTML = shown.map(function (p, i) {
+      var title = p.url ? '<a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.title) + "</a>" : '<span class="ttl">' + esc(p.title) + "</span>";
+      return '<li class="card"><span class="idx">' + (i + 1) + '</span><p class="txt">' +
+        (p.authors ? esc(p.authors) + ", " : "") + "“" + title + ",” " + (p.venue ? "<i>" + esc(p.venue) + "</i>" : "") +
+        (p._year ? ", " + p._year : "") + "." + (p.citations ? '<span class="cite">' + p.citations + " citations</span>" : "") + "</p></li>";
     }).join("");
   }
-
-  function bindPubTools() {
-    $("pub-filter").addEventListener("click", function (e) {
-      var b = e.target.closest("button[data-type]");
-      if (!b) return;
-      filterType = b.getAttribute("data-type");
-      Array.prototype.forEach.call(this.children, function (c) { c.classList.toggle("on", c === b); });
-      renderPubs();
-    });
-    $("pub-search").addEventListener("input", function () { query = this.value.trim(); renderPubs(); });
+  function renderScholar(data) {
+    var pr = data && data.profile;
+    $("scholar").innerHTML = pr ? [["citations", "Citations"], ["h_index", "h-index"], ["i10_index", "i10-index"]].filter(function (k) { return pr[k[0]] != null; })
+      .map(function (k) { return "<span><b>" + Number(pr[k[0]]).toLocaleString() + "</b>" + k[1] + "</span>"; }).join("") : "";
+    if (data) $("pub-note").textContent = "Source: " + (data.source || "Google Scholar") + (data.updated ? " · last checked " + data.updated : "");
   }
 
   /* ---------- Teaching ---------- */
   function renderTeaching(t) {
     if (!t) return;
-    var blocks = [["Postgraduate courses", t.postgraduate], ["Undergraduate courses", t.undergraduate]]
-      .filter(function (b) { return list(b[1]).length; });
-    if (!blocks.length) return;
+    var pg = list(t.postgraduate), ug = list(t.undergraduate);
+    if (!pg.length && !ug.length) return;
     $("teaching").hidden = false;
-    $("teach").innerHTML = blocks.map(function (b) {
-      return "<div><h3>" + b[0] + '</h3><ul class="courses">' + b[1].map(function (c) {
-        return "<li><code>" + esc(c.code) + "</code><span>" + esc(c.name) + "</span></li>";
-      }).join("") + "</ul></div>";
-    }).join("");
+    $("pg").innerHTML = pg.map(function (c) { return '<div class="card"><span class="code">' + esc(c.code) + "</span><span>" + esc(c.name) + "</span></div>"; }).join("");
+    $("ug").innerHTML = ug.map(function (c) { return '<div class="card"><span class="code">' + esc(c.code) + "</span><div>" + esc(c.name) + "</div></div>"; }).join("");
   }
 
-  /* ---------- News + gallery ---------- */
-  function fmtDate(d) {
-    if (!d) return "";
-    d = String(d);
-    var m = d.match(/^(\d{4})-(\d{2})(?:-(\d{2}))?/);
-    if (!m) return d;
-    var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    return (m[3] ? +m[3] + " " : "") + months[+m[2] - 1] + " " + m[1];
-  }
-  function renderNews(n) {
-    var items = list(n);
-    $("news-list").innerHTML = items.length ? items.map(function (x) {
-      var d = x.date instanceof Date ? x.date.toISOString().slice(0, 10) : x.date;
-      return "<li>" + (d ? "<time>" + esc(fmtDate(d)) + "</time>" : "") + esc(x.text) +
-        (x.link ? ' <a href="' + esc(x.link) + '" target="_blank" rel="noopener">Read more</a>' : "") + "</li>";
-    }).join("") : '<li class="empty">No news yet.</li>';
-  }
+  /* ---------- Gallery ---------- */
+  var PHOTOS = [], YEAR = "All", VISIBLE = [], LB = -1;
   function renderGallery(g) {
-    var photos = list(g && g.photos);
-    var grid = $("news").querySelector(".news-grid");
-    if (!photos.length) { grid.classList.add("single"); return; }
-    $("gallery-wrap").hidden = false;
-    grid.classList.remove("single");
-    $("gallery").innerHTML = photos.map(function (p) {
-      return '<figure><img src="photos/gallery/' + esc(p.photo) + '" alt="' + esc(p.caption || "") +
-        '" loading="lazy">' + (p.caption ? "<figcaption>" + esc(p.caption) + "</figcaption>" : "") + "</figure>";
+    PHOTOS = list(g && g.photos).filter(function (p) { return p && p.photo; });
+    if (!PHOTOS.length) return;
+    $("gallery").hidden = false;
+    var years = ["All"];
+    PHOTOS.forEach(function (p) { var y = String(p.year || ""); if (y && years.indexOf(y) < 0) years.push(y); });
+    $("year-btns").innerHTML = years.map(function (y) {
+      return '<button type="button" data-year="' + esc(y) + '"' + (y === YEAR ? ' class="on"' : "") + ">" + (y === "All" ? "All (" + PHOTOS.length + ")" : esc(y)) + "</button>";
+    }).join("");
+    drawPhotos();
+  }
+  function drawPhotos() {
+    VISIBLE = YEAR === "All" ? PHOTOS : PHOTOS.filter(function (p) { return String(p.year) === YEAR; });
+    $("photos").innerHTML = VISIBLE.map(function (p, i) {
+      var alt = p.caption || "EG Lab group photo" + (p.year ? ", " + p.year : "");
+      return '<button type="button" data-i="' + i + '"><img src="' + esc(img("photos/gallery/", p.photo)) + '" alt="' + esc(alt) + '" loading="lazy">' +
+        (p.year ? '<span class="yr">' + esc(p.year) + "</span>" : "") + "</button>";
+    }).join("");
+  }
+  function openLB(i) {
+    LB = (i + VISIBLE.length) % VISIBLE.length;
+    var p = VISIBLE[LB], alt = p.caption || "EG Lab group photo" + (p.year ? ", " + p.year : "");
+    $("lb-img").src = img("photos/gallery/", p.photo); $("lb-img").alt = alt;
+    $("lb-cap").textContent = alt + " · " + (LB + 1) + " of " + VISIBLE.length;
+    $("lightbox").hidden = false;
+  }
+  function closeLB() { $("lightbox").hidden = true; LB = -1; }
+
+  /* ---------- News ---------- */
+  function renderNews(n) {
+    $("news-list").innerHTML = list(n).map(function (x) {
+      var d = x.date instanceof Date ? x.date.toISOString().slice(0, 10) : (x.date || "");
+      return '<li><div class="card"><div class="top">' + (x.tag ? '<span class="ntag ' + esc(String(x.tag).replace(/\W/g, "")) + '">' + esc(x.tag) + "</span>" : "") +
+        (d ? '<span class="ndate">' + esc(d) + "</span>" : "") + "</div><p>" + esc(flat(x.text)) +
+        (x.link ? ' <a href="' + esc(x.link) + '" target="_blank" rel="noopener">Read more</a>' : "") + "</p></div></li>";
     }).join("");
   }
 
-  /* ---------- Go ---------- */
-  bindPubTools();
+  /* ---------- Stats ---------- */
+  function renderStats(funded, students) {
+    var j = PUBS.filter(function (p) { return p._type === "journal"; }).length;
+    var c = PUBS.filter(function (p) { return p._type === "conference"; }).length;
+    var cells = [[j, "Journal Papers"], [c, "Conference Papers"], [funded, "Funded Projects"], [students + "+", "Students Supervised"]];
+    $("stats").innerHTML = cells.map(function (s) { return "<div><dt>" + s[1] + "</dt><dd>" + s[0] + "</dd></div>"; }).join("");
+  }
+
+  /* ---------- Behaviour ---------- */
+  function bind() {
+    var nav = $("nav");
+    var onScroll = function () {
+      nav.classList.toggle("scrolled", window.scrollY > 12);
+      $("to-top").hidden = window.scrollY < 600;
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    $("menu-btn").addEventListener("click", function () {
+      var open = !nav.classList.contains("open");
+      nav.classList.toggle("open", open);
+      this.setAttribute("aria-expanded", open);
+    });
+    $("nav-links").addEventListener("click", function (e) { if (e.target.tagName === "A") nav.classList.remove("open"); });
+    $("to-top").addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
+    $("pub-tabs").addEventListener("click", function (e) {
+      var b = e.target.closest("[data-tab]"); if (!b) return;
+      TAB = b.getAttribute("data-tab"); renderTabs(); renderPubs();
+    });
+    $("year-btns").addEventListener("click", function (e) {
+      var b = e.target.closest("[data-year]"); if (!b) return;
+      YEAR = b.getAttribute("data-year");
+      Array.prototype.forEach.call(this.children, function (x) { x.classList.toggle("on", x === b); });
+      drawPhotos();
+    });
+    $("photos").addEventListener("click", function (e) { var b = e.target.closest("[data-i]"); if (b) openLB(+b.getAttribute("data-i")); });
+    $("lightbox").addEventListener("click", function (e) { if (e.target === this) closeLB(); });
+    $("lb-close").addEventListener("click", closeLB);
+    $("lb-prev").addEventListener("click", function () { openLB(LB - 1); });
+    $("lb-next").addEventListener("click", function () { openLB(LB + 1); });
+    document.addEventListener("keydown", function (e) {
+      if (LB < 0) return;
+      if (e.key === "Escape") closeLB();
+      if (e.key === "ArrowRight") openLB(LB + 1);
+      if (e.key === "ArrowLeft") openLB(LB - 1);
+    });
+  }
+
+  bind();
   Promise.all([
-    load("data/site.yml"), load("data/research.yml"), load("data/members.yml"),
-    load("data/news.yml"), load("data/gallery.yml"),
+    load("data/site.yml"), load("data/members.yml"), load("data/research.yml"),
     load("data/publications.json"), load("data/publications-extra.yml"),
-    load("data/teaching.yml")
+    load("data/teaching.yml"), load("data/gallery.yml"), load("data/news.yml")
   ]).then(function (d) {
-    renderTeaching(d[7]);
     renderSite(d[0]);
-    renderResearch(d[1]);
-    renderPeople(d[2]);
-    renderNews(d[3]);
-    renderGallery(d[4]);
-    PUBS = preparePubs(d[5], d[6]);
-    renderMetrics(d[5]);
-    renderPubs();
+    var students = renderPeople(d[1]);
+    var funded = renderResearch(d[2]);
+    PUBS = preparePubs(d[3], d[4]);
+    if (!PUBS.some(function (p) { return p._type === TAB; }) && PUBS.length) TAB = PUBS[0]._type;
+    renderScholar(d[3]); renderTabs(); renderPubs();
+    renderTeaching(d[5]);
+    renderGallery(d[6]);
+    renderNews(d[7]);
+    renderStats(funded, students);
   });
 })();

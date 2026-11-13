@@ -57,7 +57,7 @@ You can always undo: open the file, click **History**, open the previous version
 4. Commit changes.
 
 **To replace a photo**, just upload a new file with the **same name**. GitHub replaces the old one and nothing else needs changing.
-Until someone has a photo, the site shows their initials in a circle.
+Student photos are optional. Without one, the card simply shows the name, email and topic.
 
 ### A student graduated
 In `data/members.yml`, cut their block from the student group and paste it under `Alumni`.
@@ -73,12 +73,13 @@ You can delete the `email:` line for alumni if you prefer.
 ### Add news
 Open `data/news.yml`. Copy the first block, paste it **at the top** (newest first), and edit it:
 ```yaml
-- date: "2026-11"
+- date: "2026"
+  tag: Publication
   text: Our paper on tactical microgrids was accepted in Energy Reports.
   link: https://doi.org/10.1016/j.egyr.2026.109838
 ```
 `date` can be a full date (`"2026-11-13"`), a month (`"2026-11"`), a year, or `""`.
-`link` is optional; leave it as `""` if there is none.
+`tag` is Announcement, Achievement or Publication. `link` is optional; leave it as `""` if there is none.
 
 ### Add group photos
 1. Upload the photos to `photos/gallery/`.
@@ -86,16 +87,14 @@ Open `data/news.yml`. Copy the first block, paste it **at the top** (newest firs
    ```yaml
    photos:
      - photo: group-2026.jpg
-       caption: EG Lab, 2026
+       year: "2026"
    ```
+   The year buttons above the photos are made automatically.
 
 ### Change the logo or campus photo
 Upload the new picture to `photos/site/` with the **same name** as the old one
-(`logo.png`, `favicon.png` or `campus.jpg`) and it replaces it. Or upload it under a new name
+(`logo.png`, `favicon.png`, `campus-hero.jpg`, `campus-about.jpg` or `campus-band.jpg`) and it replaces it. Or upload it under a new name
 and change the name in `data/site.yml`.
-
-### Add a picture to a research project
-Upload it to `photos/research/`, then in `data/research.yml` set `image: your-file.jpg` on that project.
 
 ---
 

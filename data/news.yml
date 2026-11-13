@@ -1,27 +1,32 @@
 # =====================================================================
 #  NEWS
 #  Newest at the TOP. To add news, copy the first block, paste it above
-#  it, and change the text. "date" can be a full date ("2026-10-20"),
-#  a month ("2026-10"), a year ("2026") or "".
-#  "link" is optional: paste a web address or leave it as "".
+#  it, and change the text.
+#  tag: Announcement, Achievement or Publication
+#  link: optional web address, or ""
 # =====================================================================
 
 - date: "2026"
-  text: Md Mootasim Billah's paper "Mission-aware Model Predictive Control for tactical microgrids under monsoon uncertainty" is published in Energy Reports.
+  tag: Publication
+  text: Mahfuj, Tonny and Kajal's first journal paper, "Resilient EV-PV grid operation under consumer variability and ML-based fault diagnosis", is published in the Q1 journal Renewable Energy Focus.
+  link: ""
+
+- date: "2026"
+  tag: Publication
+  text: Congratulations to Mootasim Billah on publishing "Mission-aware Model Predictive Control for tactical microgrids under monsoon uncertainty" in Energy Reports.
   link: https://doi.org/10.1016/j.egyr.2026.109838
 
 - date: "2025"
+  tag: Achievement
   text: Congratulations to Tonny on securing a fully funded PhD position at the University of Toronto.
   link: ""
 
 - date: "2025"
-  text: Congratulations to Kajal on joining the University of Malaya for a fully funded MSc.
+  tag: Achievement
+  text: Congratulations to Kajol on joining the University of Malaya for a fully funded MSc.
   link: ""
 
 - date: "2025"
-  text: Mahfuj, Tonny and Kajal's first journal paper, "Resilient EV-PV Grid Operation under Consumer Variability and ML-Based Fault Diagnosis", is under second review at the Q1 journal Renewable Energy Focus.
-  link: ""
-
-- date: "2025"
-  text: Congratulations to Kajal and Rabbi on publishing "Techno-economic and resilience optimization of a university microgrid" in the Q1 journal Energy Reports.
+  tag: Publication
+  text: Congratulations to Kajal and Rabbi on publishing a Q1 journal paper in Energy Reports titled "Techno-economic and resilience optimization of a university microgrid."
   link: https://doi.org/10.1016/j.egyr.2025.10.034

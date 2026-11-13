@@ -3,180 +3,181 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>EG Lab · JUST</title>
-<meta name="description" content="Energy Grid Research Group, Department of EEE, Jashore University of Science and Technology.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="assets/style.css">
+<title>EG Lab · Energy Grid Research Group | EEE, JUST</title>
+<meta name="description" content="Energy Grid (EG) Research Group, Department of EEE, Jashore University of Science and Technology.">
 <link rel="icon" type="image/png" href="photos/site/favicon.png" id="favicon">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <!--BODY-START-->
-<header class="topbar">
-  <div class="wrap topbar-in">
-    <a class="brand" href="#top" id="brand"><span class="phase" aria-hidden="true"><i></i><i></i><i></i></span><span id="brand-name">EG Lab</span></a>
-    <nav class="nav" aria-label="Sections">
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand">
+      <span class="brand-logo"><img id="nav-logo" src="photos/site/logo.png" alt="EG Lab logo"></span>
+      <span id="brand-name">EG Lab · JUST</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Sections">
+      <a href="#about">About</a>
       <a href="#research">Research</a>
-      <a href="#people">People</a>
       <a href="#publications">Publications</a>
       <a href="#teaching">Teaching</a>
+      <a href="#group">Group</a>
+      <a href="#gallery">Photos</a>
       <a href="#news">News</a>
       <a href="#contact">Contact</a>
     </nav>
+    <button class="menu-btn" id="menu-btn" type="button" aria-label="Toggle menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
   </div>
 </header>
 
-<main id="top">
-  <section class="hero">
+<main>
+  <section class="hero" id="top">
+    <img class="hero-bg" id="hero-bg" src="photos/site/campus-hero.jpg" alt="" aria-hidden="true">
+    <div class="hero-shade"></div>
     <div class="wrap hero-in">
-      <div class="hero-text">
-        <img class="hero-logo" id="hero-logo" src="photos/site/logo.png" alt="Energy Grid Lab logo" hidden>
-        <p class="eyebrow" id="hero-dept">Department of EEE · JUST</p>
-        <h1 id="hero-name">Energy Grid Research Group</h1>
-        <p class="tagline" id="hero-tagline"></p>
-        <div class="hero-cta">
-          <a class="btn" href="#research">Our research</a>
-          <a class="btn ghost" href="#contact">Join the group</a>
-        </div>
+      <img class="hero-logo" id="hero-logo" src="photos/site/logo.png" alt="EG Lab logo">
+      <p class="chip"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z M6 12v5c3 2 9 2 12 0v-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span id="hero-dept"></span></p>
+      <h1><span id="title-main">Energy Grid</span> <span class="gold" id="title-gold">(EG) Research Group</span></h1>
+      <p class="hero-sub" id="hero-sub"></p>
+      <p class="hero-kw" id="hero-kw"></p>
+      <p class="hero-text" id="hero-text"></p>
+      <p class="hero-loc"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg><span id="hero-loc"></span></p>
+      <div class="hero-btns">
+        <a class="btn gold-btn" id="btn-email" href="#contact">Email the Lab</a>
+        <a class="btn line-btn" id="btn-profile" href="#" target="_blank" rel="noopener">PI's JUST Profile</a>
+        <a class="btn line-btn" id="btn-call" href="#contact">Call</a>
       </div>
-      <figure class="sld" aria-label="One-line diagram of a renewable-rich microgrid">
-        <svg viewBox="0 0 420 300" role="img">
-          <title>One-line diagram: grid, solar, battery, EV charger and load on a common bus</title>
-          <g class="wire">
-            <line x1="40" y1="70" x2="380" y2="70"/>
-            <line x1="70" y1="30" x2="70" y2="70"/>
-            <line x1="120" y1="70" x2="120" y2="200"/>
-            <line x1="210" y1="70" x2="210" y2="200"/>
-            <line x1="300" y1="70" x2="300" y2="200"/>
-            <line x1="360" y1="70" x2="360" y2="200"/>
-          </g>
-          <g class="flow">
-            <line x1="70" y1="30" x2="70" y2="70"/>
-            <line x1="40" y1="70" x2="380" y2="70"/>
-            <line x1="120" y1="70" x2="120" y2="200"/>
-            <line x1="210" y1="200" x2="210" y2="70"/>
-            <line x1="300" y1="70" x2="300" y2="200"/>
-            <line x1="360" y1="70" x2="360" y2="200"/>
-          </g>
-          <rect class="bus" x="36" y="66" width="348" height="8" rx="1"/>
-          <g class="dev">
-            <circle cx="70" cy="22" r="12"/>
-            <path d="M62 22 q4 -7 8 0 t8 0" class="thin"/>
-            <rect x="96" y="200" width="48" height="34" rx="3"/>
-            <path d="M102 214 h36 M102 222 h36 M114 206 v24 M126 206 v24" class="thin"/>
-            <rect x="190" y="200" width="40" height="34" rx="3"/>
-            <path d="M202 210 v14 M218 213 v8 M198 217 h8 M214 217 h8" class="thin"/>
-            <rect x="282" y="200" width="36" height="34" rx="3"/>
-            <path d="M296 207 l-5 12 h9 l-5 12" class="thin"/>
-            <path d="M348 200 h24 l-12 22 z"/>
-          </g>
-          <g class="lbl">
-            <text x="92" y="26">GRID 11 kV</text>
-            <text x="120" y="252" text-anchor="middle">PV</text>
-            <text x="210" y="252" text-anchor="middle">BESS</text>
-            <text x="300" y="252" text-anchor="middle">EV</text>
-            <text x="360" y="252" text-anchor="middle">LOAD</text>
-            <text x="384" y="58" text-anchor="end">0.4 kV BUS</text>
-          </g>
-        </svg>
-      </figure>
+      <dl class="stats" id="stats"></dl>
     </div>
   </section>
 
-  <section class="band" id="about">
-    <div class="wrap about-grid">
-      <p class="about-text" id="about-text"></p>
-      <ul class="focus" id="focus"></ul>
-    </div>
+  <section class="section" id="about">
     <div class="wrap">
-      <figure class="campus" id="campus" hidden><img id="campus-img" src="" alt=""><figcaption id="campus-cap"></figcaption></figure>
+      <div class="heading"><p class="eyebrow">EG Research Group</p><h2>About the Lab</h2><div class="bar"></div></div>
+      <div class="about-grid">
+        <div class="about-main">
+          <div id="about-text"></div>
+          <h3 class="mini-h">Principal Investigator</h3>
+          <div id="pi-bio"></div>
+          <figure class="photo-card" id="about-fig">
+            <img id="about-img" src="" alt="">
+            <figcaption id="about-cap"></figcaption>
+          </figure>
+        </div>
+        <aside class="about-side">
+          <figure class="lead-card" id="lead-card"></figure>
+          <div>
+            <h3 class="mini-h">Education</h3>
+            <ol class="timeline" id="education"></ol>
+          </div>
+          <div>
+            <h3 class="mini-h">Positions</h3>
+            <ul class="positions" id="positions"></ul>
+          </div>
+        </aside>
+      </div>
     </div>
   </section>
 
-  <section class="section" id="research">
+  <section class="section tint" id="research">
     <div class="wrap">
-      <h2 class="sec-h"><span>Research</span></h2>
+      <div class="heading"><p class="eyebrow">Research</p><h2>Research &amp; Projects</h2><p class="desc" id="research-intro"></p><div class="bar"></div></div>
+      <div class="mission" id="mission"></div>
+      <h3 class="sub-h">Research Interests</h3>
       <div class="interests" id="interests"></div>
-      <h3 class="sub-h" style="margin-top:0">Current projects</h3>
-      <p class="methods" id="methods"></p>
-      <div class="projects" id="projects"></div>
-      <h3 class="sub-h">Funded projects</h3>
-      <ul class="funded" id="funded"></ul>
-    </div>
-  </section>
-
-  <section class="section alt" id="people">
-    <div class="wrap">
-      <h2 class="sec-h"><span>People</span></h2>
-      <article class="lead" id="lead"></article>
-      <div id="groups"></div>
+      <h3 class="sub-h">Current Research</h3>
+      <div class="current" id="current"></div>
+      <h3 class="sub-h">Funded Projects</h3>
+      <div class="funded" id="funded"></div>
     </div>
   </section>
 
   <section class="section" id="publications">
     <div class="wrap">
-      <h2 class="sec-h"><span>Publications</span></h2>
-      <div class="pub-head">
-        <dl class="metrics" id="metrics"></dl>
-        <div class="pub-tools">
-          <div class="chips" role="group" aria-label="Filter by type" id="pub-filter">
-            <button type="button" class="chip on" data-type="all">All</button>
-            <button type="button" class="chip" data-type="journal">Journals</button>
-            <button type="button" class="chip" data-type="conference">Conferences</button>
-            <button type="button" class="chip" data-type="preprint">Preprints</button>
-          </div>
-          <label class="search"><span class="sr">Search publications</span>
-            <input id="pub-search" type="search" placeholder="Search title, author, venue">
-          </label>
-        </div>
-      </div>
-      <div id="pubs"></div>
+      <div class="heading"><p class="eyebrow">Publications</p><h2>Publications</h2><p class="desc">Journal and conference papers on power systems, HVDC, microgrids, renewable integration, and grid resilience. Updated automatically from Google Scholar.</p><div class="bar"></div></div>
+      <div class="scholar" id="scholar"></div>
+      <div class="tabs" role="tablist" id="pub-tabs"></div>
+      <ol class="pubs" id="pubs"></ol>
       <p class="pub-note" id="pub-note"></p>
     </div>
   </section>
 
-  <section class="section" id="teaching" hidden>
+  <section class="section tint" id="teaching" hidden>
     <div class="wrap">
-      <h2 class="sec-h"><span>Teaching</span></h2>
-      <div class="teach" id="teach"></div>
-    </div>
-  </section>
-
-  <section class="section alt" id="news">
-    <div class="wrap news-grid">
-      <div>
-        <h2 class="sec-h"><span>News</span></h2>
-        <ol class="news" id="news-list"></ol>
-      </div>
-      <div id="gallery-wrap" hidden>
-        <h2 class="sec-h"><span>Group photos</span></h2>
-        <div class="gallery" id="gallery"></div>
+      <div class="heading"><p class="eyebrow">Teaching &amp; Learning</p><h2>Teaching</h2><p class="desc">Courses taught at the postgraduate and undergraduate levels in the Department of EEE, JUST.</p><div class="bar"></div></div>
+      <div class="teach">
+        <div><h3 class="sub-h">Postgraduate Courses</h3><div class="pg" id="pg"></div></div>
+        <div><h3 class="sub-h">Undergraduate Courses</h3><div class="ug" id="ug"></div></div>
       </div>
     </div>
   </section>
 
-  <section class="section" id="contact">
-    <div class="wrap contact-grid">
-      <div>
-        <h2 class="sec-h"><span>Contact</span></h2>
-        <address id="contact-box"></address>
-        <div class="links" id="links"></div>
-      </div>
-      <aside class="join" id="join" hidden>
-        <h3>Join the group</h3>
-        <p id="join-text"></p>
-      </aside>
+  <section class="section" id="group">
+    <div class="wrap">
+      <div class="heading"><p class="eyebrow">Supervision</p><h2>Research Group</h2><p class="desc">The Energy Grid (EG) Research Group, a team of motivated Master's and undergraduate students working on sustainable energy systems at JUST.</p><div class="bar"></div></div>
+      <div id="groups"></div>
+    </div>
+  </section>
+
+  <section class="section" id="gallery" hidden>
+    <div class="wrap">
+      <div class="heading"><p class="eyebrow">Memories</p><h2>Group Photos</h2><p class="desc">Moments from the EG Lab family over the years.</p><div class="bar"></div></div>
+      <div class="year-btns" id="year-btns"></div>
+      <div class="photos" id="photos"></div>
+    </div>
+  </section>
+
+  <section class="band" id="campus" aria-label="Campus">
+    <img class="band-bg" id="band-bg" src="photos/site/campus-band.jpg" alt="">
+    <div class="band-shade"></div>
+    <div class="wrap band-in">
+      <p class="eyebrow">Our Campus</p>
+      <h2 id="campus-title"></h2>
+      <p id="campus-text"></p>
+      <p class="pill"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg><span id="campus-addr"></span></p>
+    </div>
+  </section>
+
+  <section class="section tint" id="news">
+    <div class="wrap">
+      <div class="heading"><p class="eyebrow">News &amp; Achievements</p><h2>Latest Updates</h2><div class="bar"></div></div>
+      <ol class="news" id="news-list"></ol>
     </div>
   </section>
 </main>
 
-<footer class="foot">
-  <div class="wrap foot-in">
-    <span id="foot-name">EG Lab</span>
-    <span id="foot-updated"></span>
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h2>Get in Touch</h2>
+        <div class="bar"></div>
+        <p class="invite" id="invite"></p>
+        <div class="hero-btns">
+          <a class="btn gold-btn" id="foot-email" href="#">Send Email</a>
+          <a class="btn line-btn" id="foot-profile" href="#" target="_blank" rel="noopener">PI's JUST Profile</a>
+        </div>
+      </div>
+      <div class="foot-contact" id="foot-contact"></div>
+    </div>
+    <div class="foot-bottom">
+      <p><img id="foot-logo" src="photos/site/logo.png" alt=""><span id="foot-copy"></span></p>
+      <p id="foot-right"></p>
+    </div>
   </div>
 </footer>
+
+<button class="to-top" id="to-top" type="button" aria-label="Back to top" hidden>
+  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+<div class="lightbox" id="lightbox" hidden>
+  <button type="button" class="lb-close" id="lb-close" aria-label="Close">✕</button>
+  <button type="button" class="lb-nav lb-prev" id="lb-prev" aria-label="Previous photo">‹</button>
+  <figure><img id="lb-img" src="" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  <button type="button" class="lb-nav lb-next" id="lb-next" aria-label="Next photo">›</button>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 <script src="assets/app.js"></script>
