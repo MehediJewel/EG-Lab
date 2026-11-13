@@ -51,15 +51,8 @@
     $("title-gold").textContent = s.title_gold || "";
     $("hero-sub").textContent = s.subtitle || "";
     $("hero-kw").textContent = s.keywords || "";
-    $("hero-text").textContent = flat(s.hero_text);
-    $("hero-loc").textContent = s.location || "";
 
     $("about-text").innerHTML = list(s.about).map(function (p) { return "<p>" + esc(flat(p)) + "</p>"; }).join("");
-    if (s.about_photo) {
-      $("about-img").src = img("photos/site/", s.about_photo);
-      $("about-img").alt = s.about_photo_caption || "";
-      $("about-cap").textContent = s.about_photo_caption || "";
-    } else { $("about-fig").hidden = true; }
 
     if (s.band_photo) $("band-bg").src = img("photos/site/", s.band_photo);
     $("campus-title").textContent = s.campus_title || "";
@@ -90,7 +83,9 @@
     $("lead-card").innerHTML =
       (L.photo ? '<div class="ph"><img src="' + esc(img("photos/members/", L.photo)) + '" alt="' + esc(L.name) + '"></div>' : "") +
       "<figcaption><b>" + esc(L.name) + '</b><div class="t">' + esc(L.title) + "</div>" +
-      (L.badge ? '<span class="badge">' + esc(L.badge) + "</span>" : "") + "</figcaption>";
+      (L.badge ? '<span class="badge">' + esc(L.badge) + "</span>" : "") +
+      '<a class="lead-link" href="#pi">Full profile →</a></figcaption>';
+    $("pi-name").textContent = L.name || "";
     $("education").innerHTML = list(L.education).map(function (e) {
       return "<li><b>" + esc(e.degree) + '</b><div class="i">' + esc(e.institution) + '</div><div class="w">' + esc(e.where) + "</div>" +
         (e.note ? '<div class="n">' + esc(e.note) + "</div>" : "") + "</li>";
@@ -100,7 +95,7 @@
     }).join("");
 
     var total = 0;
-    $("groups").innerHTML = list(m.groups).map(function (g, gi) {
+    var groupsHtml = function (g) {
       var ppl = list(g.people);
       total += ppl.length;
       if (!ppl.length) return "";
@@ -121,7 +116,22 @@
             (p.topic ? '<p class="topic"><span>Topic:</span> ' + esc(p.topic) + "</p>" : "") +
             (p.now ? '<div class="now">' + esc(p.now) + "</div>" : "") + "</div>";
         }).join("") + "</div></div>";
-    }).join("");
+    };
+    var gs = list(m.groups);
+    $("groups").innerHTML = gs.filter(function (g) { return !g.collapsed; }).map(groupsHtml).join("");
+    $("groups-past").innerHTML = gs.filter(function (g) { return g.collapsed; }).map(groupsHtml).join("");
+    var al = list(m.alumni).filter(function (a) { return a && a.name; });
+    if (al.length) {
+      $("alumni-wrap").hidden = false;
+      $("alumni").innerHTML = al.map(function (a) {
+        var ini = String(a.name).replace(/\(.*?\)/g, "").replace(/\b(Md|Mst|Dr)\.?\s/gi, "").trim().split(/\s+/);
+        ini = ((ini[0] || "")[0] || "") + (ini.length > 1 ? ini[ini.length - 1][0] : "");
+        return '<div class="alum card">' + (a.photo ? '<img src="' + esc(img("photos/members/", a.photo)) + '" alt="' + esc(a.name) + '" loading="lazy">'
+          : '<span class="ini" aria-hidden="true">' + esc(ini.toUpperCase()) + "</span>") +
+          "<div><b>" + esc(a.name) + "</b>" + (a.now ? '<p class="now">' + esc(a.now) + "</p>" : "") +
+          (a.worked_on ? '<p class="was">In EG Lab: ' + esc(a.worked_on) + "</p>" : "") + "</div></div>";
+      }).join("");
+    }
     Array.prototype.forEach.call(document.querySelectorAll("[data-fold] > button"), function (b) {
       b.addEventListener("click", function () {
         var open = b.getAttribute("aria-expanded") !== "true";
@@ -142,17 +152,16 @@
       return '<div class="card"><h4>' + esc(x.title) + "</h4><p>" + esc(x.text) + "</p></div>";
     }).join("");
     $("current").innerHTML = list(r.current).map(function (x, i) {
-      return '<div class="card"><h4><span class="num">' + String(i + 1).padStart(2, "0") + "</span>" + esc(x.title) + "</h4><p>" + esc(flat(x.text)) + "</p></div>";
+      return '<details class="card"><summary><span class="num">' + String(i + 1).padStart(2, "0") + "</span><span>" + esc(x.title) + "</span>" + ICON.chev + "</summary><p>" + esc(flat(x.text)) + "</p></details>";
     }).join("");
     $("funded").innerHTML = list(r.funded).map(function (x) {
-      return '<div class="card"><h4>' + esc(x.title) + '</h4><div class="meta"><span><b>Funding:</b> ' + esc(x.funder) +
-        "</span><span><b>Duration:</b> " + esc(x.period) + '</span><span class="tagpill">' + esc(x.role) + "</span></div></div>";
+      return '<div class="frow"><div><h4>' + esc(x.title) + '</h4><p>' + esc(x.funder) + '</p></div><div class="fmeta"><span class="tagpill">' + esc(x.role) + '</span><span class="fwhen">' + esc(x.period) + "</span></div></div>";
     }).join("");
     return list(r.funded).length;
   }
 
   /* ---------- Publications ---------- */
-  var PUBS = [], TAB = "journal";
+  var PUBS = [], TAB = "journal", PUB_ALL = false, PUB_LIMIT = 6;
   var TABS = [["journal", "Journal Papers"], ["conference", "Conference Papers"], ["other", "Preprints & Other"]];
   function norm(t) { return String(t || "").toLowerCase().replace(/[^a-z0-9]+/g, ""); }
   function guessType(p) {
@@ -183,7 +192,10 @@
     }).join("");
   }
   function renderPubs() {
-    var shown = PUBS.filter(function (p) { return p._type === TAB; });
+    var all = PUBS.filter(function (p) { return p._type === TAB; });
+    var shown = PUB_ALL ? all : all.slice(0, PUB_LIMIT);
+    $("pub-more").hidden = all.length <= PUB_LIMIT;
+    $("pub-more").textContent = PUB_ALL ? "Show fewer" : "Show all " + all.length + " papers";
     $("pubs").innerHTML = shown.map(function (p, i) {
       var title = p.url ? '<a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.title) + "</a>" : '<span class="ttl">' + esc(p.title) + "</span>";
       return '<li class="card"><span class="idx">' + (i + 1) + '</span><p class="txt">' +
@@ -239,8 +251,12 @@
   function closeLB() { $("lightbox").hidden = true; LB = -1; }
 
   /* ---------- News ---------- */
+  var NEWS = [], NEWS_ALL = false, NEWS_LIMIT = 3;
   function renderNews(n) {
-    $("news-list").innerHTML = list(n).map(function (x) {
+    NEWS = list(n);
+    $("news-more").hidden = NEWS.length <= NEWS_LIMIT;
+    $("news-more").textContent = NEWS_ALL ? "Show fewer" : "Show all " + NEWS.length + " updates";
+    $("news-list").innerHTML = (NEWS_ALL ? NEWS : NEWS.slice(0, NEWS_LIMIT)).map(function (x) {
       var d = x.date instanceof Date ? x.date.toISOString().slice(0, 10) : (x.date || "");
       return '<li><div class="card"><div class="top">' + (x.tag ? '<span class="ntag ' + esc(String(x.tag).replace(/\W/g, "")) + '">' + esc(x.tag) + "</span>" : "") +
         (d ? '<span class="ndate">' + esc(d) + "</span>" : "") + "</div><p>" + esc(flat(x.text)) +
@@ -274,7 +290,14 @@
     $("to-top").addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
     $("pub-tabs").addEventListener("click", function (e) {
       var b = e.target.closest("[data-tab]"); if (!b) return;
-      TAB = b.getAttribute("data-tab"); renderTabs(); renderPubs();
+      TAB = b.getAttribute("data-tab"); PUB_ALL = false; renderTabs(); renderPubs();
+    });
+    $("pub-more").addEventListener("click", function () {
+      PUB_ALL = !PUB_ALL; renderPubs();
+      if (!PUB_ALL) $("publications").scrollIntoView();
+    });
+    $("news-more").addEventListener("click", function () {
+      NEWS_ALL = !NEWS_ALL; renderNews(NEWS);
     });
     $("year-btns").addEventListener("click", function (e) {
       var b = e.target.closest("[data-year]"); if (!b) return;

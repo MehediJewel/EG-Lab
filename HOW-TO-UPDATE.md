@@ -8,7 +8,7 @@ updates by itself about one minute later.
 | What you want to change | File or folder |
 |---|---|
 | Lab name, tagline, welcome text, contact, links | `data/site.yml` |
-| Members, students, alumni | `data/members.yml` |
+| Members, students, alumni, your positions | `data/members.yml` |
 | Member photos | `photos/members/` |
 | Research areas, current projects, funded projects | `data/research.yml` |
 | News | `data/news.yml` |
@@ -69,6 +69,17 @@ Optionally add a line saying where they went:
         photo: ""
 ```
 You can delete the `email:` line for alumni if you prefer.
+
+### Add a former student to the Alumni Spotlight
+At the bottom of `data/members.yml`, under `alumni:`, copy one block and change it:
+```yaml
+  - name: Fouziya Easmin Tonny
+    now: PhD Student (fully funded), University of Toronto, Canada
+    worked_on: ML-based fault diagnostics
+    photo: ""
+```
+`now` is their current position. Put the most notable people at the top.
+For a photo, upload it to `photos/members/` and write the file name after `photo:`.
 
 ### Add news
 Open `data/news.yml`. Copy the first block, paste it **at the top** (newest first), and edit it:

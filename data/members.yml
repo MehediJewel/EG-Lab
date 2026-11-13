@@ -34,6 +34,9 @@ lead:
       where: Khulna, Bangladesh · 2010
       note: ""
   positions:
+    - role: Postdoctoral Research Fellow
+      place: King Fahd University of Petroleum & Minerals (KFUPM), Saudi Arabia
+      when: Present
     - role: Associate Professor
       place: Dept. of EEE, Jashore University of Science & Technology (JUST)
       when: Present
@@ -92,7 +95,6 @@ groups:
   - title: Past Undergraduate Supervision
     badge: 2018–2024 batch
     collapsed: true
-    note: Alumni of the lab have gone on to funded MSc and PhD positions at the University of Toronto, University of Malaya, and beyond.
     people:
       - name: Mahfujur Rahman
         topic: EV Impact Analysis
@@ -106,3 +108,18 @@ groups:
         topic: ML-based Fault Diagnostics
       - name: Rabbi Hossain
         topic: Grid Resilience Enhancement
+
+# ---------------------------------------------------------------------
+#  ALUMNI SPOTLIGHT: former students and where they are now.
+#  "now" is their current position. "photo" is optional (photos/members/).
+#  Add the newest or most notable at the top.
+# ---------------------------------------------------------------------
+alumni:
+  - name: Fouziya Easmin Tonny
+    now: PhD Student (fully funded), University of Toronto, Canada
+    worked_on: ML-based fault diagnostics
+    photo: ""
+  - name: Md Kamrul Hassan Kajal
+    now: MSc Student (fully funded), University of Malaya, Malaysia
+    worked_on: Grid resilience enhancement
+    photo: ""

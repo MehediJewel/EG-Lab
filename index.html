@@ -6,6 +6,9 @@
 <title>EG Lab · Energy Grid Research Group | EEE, JUST</title>
 <meta name="description" content="Energy Grid (EG) Research Group, Department of EEE, Jashore University of Science and Technology.">
 <link rel="icon" type="image/png" href="photos/site/favicon.png" id="favicon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -20,9 +23,8 @@
       <a href="#about">About</a>
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
+      <a href="#group">People</a>
       <a href="#teaching">Teaching</a>
-      <a href="#group">Group</a>
-      <a href="#gallery">Photos</a>
       <a href="#news">News</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -42,8 +44,6 @@
       <h1><span id="title-main">Energy Grid</span> <span class="gold" id="title-gold">(EG) Research Group</span></h1>
       <p class="hero-sub" id="hero-sub"></p>
       <p class="hero-kw" id="hero-kw"></p>
-      <p class="hero-text" id="hero-text"></p>
-      <p class="hero-loc"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/></svg><span id="hero-loc"></span></p>
       <div class="hero-btns">
         <a class="btn gold-btn" id="btn-email" href="#contact">Email the Lab</a>
         <a class="btn line-btn" id="btn-profile" href="#" target="_blank" rel="noopener">PI's JUST Profile</a>
@@ -59,58 +59,46 @@
       <div class="about-grid">
         <div class="about-main">
           <div id="about-text"></div>
-          <h3 class="mini-h">Principal Investigator</h3>
-          <div id="pi-bio"></div>
-          <figure class="photo-card" id="about-fig">
-            <img id="about-img" src="" alt="">
-            <figcaption id="about-cap"></figcaption>
-          </figure>
+          <div class="mission" id="mission"></div>
         </div>
-        <aside class="about-side">
-          <figure class="lead-card" id="lead-card"></figure>
-          <div>
-            <h3 class="mini-h">Education</h3>
-            <ol class="timeline" id="education"></ol>
-          </div>
-          <div>
-            <h3 class="mini-h">Positions</h3>
-            <ul class="positions" id="positions"></ul>
-          </div>
-        </aside>
+        <figure class="lead-card" id="lead-card"></figure>
       </div>
     </div>
   </section>
 
-  <section class="section tint" id="research">
+  <section class="section tint" id="pi">
+    <div class="wrap">
+      <div class="heading"><p class="eyebrow">Principal Investigator</p><h2 id="pi-name">Dr. Mehedi Hassan</h2><div class="bar"></div></div>
+      <div class="pi-grid">
+        <div class="pi-bio" id="pi-bio"></div>
+        <div class="pi-side">
+          <div><h3 class="mini-h">Positions</h3><ul class="positions" id="positions"></ul></div>
+          <div><h3 class="mini-h">Education</h3><ol class="timeline" id="education"></ol></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="research">
     <div class="wrap">
       <div class="heading"><p class="eyebrow">Research</p><h2>Research &amp; Projects</h2><p class="desc" id="research-intro"></p><div class="bar"></div></div>
-      <div class="mission" id="mission"></div>
       <h3 class="sub-h">Research Interests</h3>
       <div class="interests" id="interests"></div>
-      <h3 class="sub-h">Current Research</h3>
+      <h3 class="sub-h">Current Research <small>Click a project to read more</small></h3>
       <div class="current" id="current"></div>
       <h3 class="sub-h">Funded Projects</h3>
       <div class="funded" id="funded"></div>
     </div>
   </section>
 
-  <section class="section" id="publications">
+  <section class="section tint" id="publications">
     <div class="wrap">
       <div class="heading"><p class="eyebrow">Publications</p><h2>Publications</h2><p class="desc">Journal and conference papers on power systems, HVDC, microgrids, renewable integration, and grid resilience. Updated automatically from Google Scholar.</p><div class="bar"></div></div>
       <div class="scholar" id="scholar"></div>
       <div class="tabs" role="tablist" id="pub-tabs"></div>
       <ol class="pubs" id="pubs"></ol>
+      <button type="button" class="more-btn" id="pub-more" hidden></button>
       <p class="pub-note" id="pub-note"></p>
-    </div>
-  </section>
-
-  <section class="section tint" id="teaching" hidden>
-    <div class="wrap">
-      <div class="heading"><p class="eyebrow">Teaching &amp; Learning</p><h2>Teaching</h2><p class="desc">Courses taught at the postgraduate and undergraduate levels in the Department of EEE, JUST.</p><div class="bar"></div></div>
-      <div class="teach">
-        <div><h3 class="sub-h">Postgraduate Courses</h3><div class="pg" id="pg"></div></div>
-        <div><h3 class="sub-h">Undergraduate Courses</h3><div class="ug" id="ug"></div></div>
-      </div>
     </div>
   </section>
 
@@ -118,14 +106,29 @@
     <div class="wrap">
       <div class="heading"><p class="eyebrow">Supervision</p><h2>Research Group</h2><p class="desc">The Energy Grid (EG) Research Group, a team of motivated Master's and undergraduate students working on sustainable energy systems at JUST.</p><div class="bar"></div></div>
       <div id="groups"></div>
+      <div class="alumni-wrap" id="alumni-wrap" hidden>
+        <h3 class="g-h">Alumni Spotlight <span class="cnt goldc">Where they are now</span></h3>
+        <div class="alumni" id="alumni"></div>
+      </div>
+      <div id="groups-past"></div>
     </div>
   </section>
 
-  <section class="section" id="gallery" hidden>
+  <section class="section tint" id="gallery" hidden>
     <div class="wrap">
       <div class="heading"><p class="eyebrow">Memories</p><h2>Group Photos</h2><p class="desc">Moments from the EG Lab family over the years.</p><div class="bar"></div></div>
       <div class="year-btns" id="year-btns"></div>
       <div class="photos" id="photos"></div>
+    </div>
+  </section>
+
+  <section class="section" id="teaching" hidden>
+    <div class="wrap">
+      <div class="heading"><p class="eyebrow">Teaching &amp; Learning</p><h2>Teaching</h2><p class="desc">Courses taught at the postgraduate and undergraduate levels in the Department of EEE, JUST.</p><div class="bar"></div></div>
+      <div class="teach">
+        <div><h3 class="sub-h">Postgraduate Courses</h3><div class="pg" id="pg"></div></div>
+        <div><h3 class="sub-h">Undergraduate Courses</h3><div class="ug" id="ug"></div></div>
+      </div>
     </div>
   </section>
 
@@ -144,6 +147,7 @@
     <div class="wrap">
       <div class="heading"><p class="eyebrow">News &amp; Achievements</p><h2>Latest Updates</h2><div class="bar"></div></div>
       <ol class="news" id="news-list"></ol>
+      <button type="button" class="more-btn" id="news-more" hidden></button>
     </div>
   </section>
 </main>
