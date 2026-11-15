@@ -137,7 +137,7 @@ You can also skip this part: create an empty GitHub repository, tell Claude its 
 2. Under "Build and deployment", Source: **Deploy from a branch**. Branch: **main**, folder **/ (root)**. Click **Save**.
 3. After a minute your site is live at `https://YOUR-USERNAME.github.io/eg-lab/`.
 
-**Option B: Netlify (keeps your current eg-lab-just.netlify.app address)**
+**Option B: Netlify (keeps your current eg-lab.netlify.app address)**
 1. Log in to Netlify and open your existing site.
 2. **Site configuration > Build & deploy > Link repository**, choose GitHub and your `eg-lab` repository.
 3. Leave the build command empty and set the publish directory to `/` (or leave it blank). Deploy.
