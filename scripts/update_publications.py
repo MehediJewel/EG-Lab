@@ -130,7 +130,7 @@ def from_scholar_page(author_id: str) -> dict:
 
 # ------------------------------------------------------------------ main
 def main() -> int:
-    site = yaml.safe_load((DATA / "site.yml").read_text(encoding="utf-8")) or {}
+    site = yaml.safe_load((DATA / "profile.yml").read_text(encoding="utf-8")) or {}
     author_id = str(site.get("google_scholar_id") or "").strip()
     if not author_id:
         print("No google_scholar_id in data/site.yml; nothing to do.")

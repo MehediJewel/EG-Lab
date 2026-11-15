@@ -1,0 +1,49 @@
+# =====================================================================
+#  YOUR PROFILE (top of the page)
+#  Change the text after the colon. Keep the spaces at the start of
+#  each line exactly as they are. Text with a colon (:) in it should be
+#  wrapped in "double quotes".
+# =====================================================================
+
+first_name: Mehedi
+last_name: Hassan
+nickname: Jewel
+
+# One line under your name
+headline: Postdoctoral Research Fellow, IRC-SES, KFUPM · Associate Professor, EEE, JUST
+
+# Your photo, stored in photos/members/
+photo: dr-mehedi-hassan.jpg
+
+# Introduction paragraphs. Each paragraph starts with "- ".
+intro:
+  - I am a Postdoctoral Research Fellow at the Interdisciplinary Research Center for Sustainable Energy Systems (IRC-SES), King Fahd University of Petroleum & Minerals (KFUPM), Saudi Arabia, and an Associate Professor in the Department of Electrical and Electronic Engineering at Jashore University of Science and Technology (JUST), Bangladesh.
+  - My research focuses on data-driven decision-making for optimizing low-carbon energy systems and enhancing grid resilience, from distribution grid flexibility and DER integration to energy systems for agriculture. I received my Ph.D. in Engineering from Macquarie University, Sydney, in 2022, working on HVDC grid dynamics and DC fault identification, and my B.Sc. and M.Sc. in EEE from KUET, Bangladesh.
+  - At JUST I lead the Energy Grid (EG) Research Group, where I supervise Master's and undergraduate thesis students.
+
+# Short research keywords shown as tags
+interests:
+  - Grid resilience
+  - Distribution grid flexibility
+  - DER integration
+  - Microgrids
+  - Agri-energy systems
+  - AI for power systems
+  - HVDC & AC/DC dynamics
+
+# Shown under your photo
+address: Dept. of EEE, JUST, Jashore-7408, Bangladesh
+
+# Links shown as buttons under your name. Add or remove freely.
+email: m.hassan@just.edu.bd
+links:
+  - label: Google Scholar
+    url: https://scholar.google.com/citations?user=9YTCcVAAAAAJ&hl=en
+  - label: JUST profile
+    url: https://just.edu.bd/t/teacher-jewel
+
+# Your Google Scholar ID (publications update automatically every week)
+google_scholar_id: 9YTCcVAAAAAJ
+
+# How many publications to show before "Show all"
+publications_shown: 8
