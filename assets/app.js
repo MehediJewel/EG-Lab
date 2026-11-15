@@ -50,7 +50,13 @@
     $("fn").textContent = p.first_name || "";
     $("ln").textContent = p.last_name || "";
     $("top-name").textContent = full;
-    $("headline").textContent = p.headline || "";
+    $("headline").innerHTML = (Array.isArray(p.headline) ? p.headline : [p.headline]).filter(Boolean).map(function (x) { return "<span>" + esc(x) + "</span>"; }).join("");
+    if (p.banner === "" || p.banner === null) $("banner").hidden = true;
+    else if (p.banner) $("banner").src = "photos/site/" + encodeURI(p.banner);
+    $("logos").innerHTML = list(p.logos).filter(function (l) { return l && l.name; }).map(function (l) {
+      var inner = l.file ? '<img src="photos/logos/' + encodeURI(l.file) + '" alt="' + esc(l.name) + '" title="' + esc(l.name) + '" onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{textContent:this.alt}))">' : "<span>" + esc(l.name) + "</span>";
+      return l.url ? '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + inner + "</a>" : "<div>" + inner + "</div>";
+    }).join("");
     if (p.photo) { $("portrait").src = "photos/members/" + encodeURI(p.photo); $("portrait").alt = full; }
     $("intro").innerHTML = list(p.intro).map(function (x) { return "<p>" + esc(flat(x)) + "</p>"; }).join("");
     $("education").innerHTML = list(p.education).map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("");

@@ -9,8 +9,10 @@ first_name: Mehedi
 last_name: Hassan
 nickname: Jewel
 
-# One line under your name
-headline: Postdoctoral Research Fellow, IRC-SES, KFUPM · Associate Professor, EEE, JUST
+# Lines under your name: current position first, then your permanent post.
+headline:
+  - Postdoctoral Research Fellow, IRC-SES, KFUPM, Saudi Arabia
+  - Associate Professor (on leave), Dept. of EEE, JUST, Bangladesh
 
 # Your photo, stored in photos/members/
 photo: dr-mehedi-hassan.jpg
@@ -18,8 +20,8 @@ photo: dr-mehedi-hassan.jpg
 # Short introduction on the front page. Keep it to 2-3 sentences.
 # Each paragraph starts with "- ".
 intro:
-  - I am a Postdoctoral Research Fellow at the Interdisciplinary Research Center for Sustainable Energy Systems (IRC-SES), KFUPM, Saudi Arabia, and an Associate Professor of Electrical and Electronic Engineering at Jashore University of Science and Technology (JUST), Bangladesh, where I lead the Energy Grid (EG) Research Group.
-  - My research focuses on data-driven decision-making for low-carbon energy systems and grid resilience, including distribution grid flexibility, DER integration and agri-energy systems.
+  - I work on data-driven methods for low-carbon energy systems and grid resilience, with a focus on distribution grid flexibility, DER integration and agri-energy systems.
+  - I am on leave from Jashore University of Science and Technology (JUST), Bangladesh, where I lead the Energy Grid (EG) Research Group.
 
 # Education, shown on the front page
 education:
@@ -50,6 +52,34 @@ links:
 
 # Your Google Scholar ID (publications update automatically every week)
 google_scholar_id: 9YTCcVAAAAAJ
+
+# Wide campus photo at the top of the front page, stored in photos/site/.
+# To change it, upload a new photo there and write its file name here.
+# Write banner: "" to hide it.
+banner: just-campus-panorama.jpg
+
+# Logo strip under your introduction. Logos are stored in photos/logos/.
+# Upload a logo with the file name shown (PNG or SVG with a clear background).
+# Until the file is there, the short name is shown as text instead.
+logos:
+  - name: IRC-SES
+    file: irc-ses.png
+    url: https://www.kfupm.edu.sa
+  - name: KFUPM
+    file: kfupm.png
+    url: https://www.kfupm.edu.sa
+  - name: JUST
+    file: just.png
+    url: https://just.edu.bd
+  - name: Macquarie University
+    file: macquarie.png
+    url: https://www.mq.edu.au
+  - name: KUET
+    file: kuet.png
+    url: https://www.kuet.ac.bd
+  - name: IEEE
+    file: ieee.svg
+    url: https://www.ieee.org
 
 # Papers shown on the front page. Write the first few words of each title.
 # Leave the list empty to show your 4 most cited papers instead.

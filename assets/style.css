@@ -143,3 +143,28 @@ h2::before { content: ""; display: inline-block; width: 4px; height: 18px; backg
 .proj { padding-left: 14px; border-left: 3px solid var(--accent); }
 .grp h3, details.grp summary { color: var(--accent); }
 .view section:first-child .page-h + .muted { margin-top: -8px; }
+
+/* Lab logo, campus photos, logo strip */
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand:hover { text-decoration: none; }
+.brand-logo { width: 34px; height: 34px; object-fit: contain; }
+@media (max-width: 640px) { .brand-logo { width: 30px; height: 30px; } }
+.headline span { display: block; }
+.headline span + span { color: var(--muted); font-weight: 400; font-size: 15px; }
+.banner { width: 100%; height: 150px; object-fit: cover; object-position: center 60%; border-radius: 8px; margin-top: 20px; }
+.banner[hidden] { display: none; }
+.banner + .about { padding-top: 24px; }
+@media (max-width: 640px) { .banner { height: 96px; } }
+.logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; margin-top: 24px; padding: 12px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); row-gap: 10px; }
+.logos > * { display: flex; align-items: center; padding: 0 18px; border-left: 2px solid var(--accent); min-height: 40px; color: var(--fg); }
+.logos > *:first-child { border-left: 0; }
+.logos a:hover { text-decoration: none; opacity: .8; }
+.logos img { height: 40px; width: auto; max-width: 140px; object-fit: contain; }
+.logos img[src$=".svg"] { height: 26px; }
+.logos span { font-weight: 600; font-size: 14px; color: var(--navy); white-space: nowrap; }
+:root[data-theme="dark"] .logos img { background: #fff; border-radius: 4px; padding: 2px 4px; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logos img { background: #fff; border-radius: 4px; padding: 2px 4px; } }
+@media (max-width: 640px) { .logos > * { padding: 0 12px; min-height: 32px; } .logos img { height: 30px; } }
+.grp-head { display: flex; align-items: center; gap: 14px; margin: 28px 0 18px; }
+.grp-head img { width: 56px; height: 56px; object-fit: contain; }
+.grp-head .page-h { margin: 0; }
