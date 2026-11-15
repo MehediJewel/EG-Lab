@@ -15,11 +15,17 @@ headline: Postdoctoral Research Fellow, IRC-SES, KFUPM · Associate Professor, E
 # Your photo, stored in photos/members/
 photo: dr-mehedi-hassan.jpg
 
-# Introduction paragraphs. Each paragraph starts with "- ".
+# Short introduction on the front page. Keep it to 2-3 sentences.
+# Each paragraph starts with "- ".
 intro:
-  - I am a Postdoctoral Research Fellow at the Interdisciplinary Research Center for Sustainable Energy Systems (IRC-SES), King Fahd University of Petroleum & Minerals (KFUPM), Saudi Arabia, and an Associate Professor in the Department of Electrical and Electronic Engineering at Jashore University of Science and Technology (JUST), Bangladesh.
-  - My research focuses on data-driven decision-making for optimizing low-carbon energy systems and enhancing grid resilience, from distribution grid flexibility and DER integration to energy systems for agriculture. I received my Ph.D. in Engineering from Macquarie University, Sydney, in 2022, working on HVDC grid dynamics and DC fault identification, and my B.Sc. and M.Sc. in EEE from KUET, Bangladesh.
-  - At JUST I lead the Energy Grid (EG) Research Group, where I supervise Master's and undergraduate thesis students.
+  - I am a Postdoctoral Research Fellow at the Interdisciplinary Research Center for Sustainable Energy Systems (IRC-SES), KFUPM, Saudi Arabia, and an Associate Professor of Electrical and Electronic Engineering at Jashore University of Science and Technology (JUST), Bangladesh, where I lead the Energy Grid (EG) Research Group.
+  - My research focuses on data-driven decision-making for low-carbon energy systems and grid resilience, including distribution grid flexibility, DER integration and agri-energy systems.
+
+# Education, shown on the front page
+education:
+  - Ph.D. in Engineering, Macquarie University, Australia, 2022
+  - M.Sc. in EEE, KUET, Bangladesh, 2016
+  - B.Sc. in EEE, KUET, Bangladesh, 2010
 
 # Short research keywords shown as tags
 interests:
@@ -31,10 +37,10 @@ interests:
   - AI for power systems
   - HVDC & AC/DC dynamics
 
-# Shown under your photo
-address: Dept. of EEE, JUST, Jashore-7408, Bangladesh
+# Contact details on the front page
+address: Room 215, Dept. of EEE, Jashore University of Science and Technology, Jashore-7408, Bangladesh
 
-# Links shown as buttons under your name. Add or remove freely.
+# Links shown in the contact box. Add or remove freely.
 email: m.hassan@just.edu.bd
 links:
   - label: Google Scholar
@@ -45,5 +51,10 @@ links:
 # Your Google Scholar ID (publications update automatically every week)
 google_scholar_id: 9YTCcVAAAAAJ
 
-# How many publications to show before "Show all"
-publications_shown: 8
+# Papers shown on the front page. Write the first few words of each title.
+# Leave the list empty to show your 4 most cited papers instead.
+selected_publications:
+  - Mission-aware Model Predictive Control
+  - Techno-economic and resilience optimization of a university microgrid
+  - Threshold-free localized scheme for DC fault identification
+  - Frequency regulation of multiple asynchronous grids
