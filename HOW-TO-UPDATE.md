@@ -7,7 +7,7 @@ updates by itself about one minute later.
 
 | What you want to change | File or folder |
 |---|---|
-| Your name, headline, introduction, research tags, email and links | `data/profile.yml` |
+| Lab name and intro, your name, headline, research tags, email and links | `data/profile.yml` |
 | Members, students, alumni, your positions | `data/members.yml` |
 | Member photos | `photos/members/` |
 | Research areas, current projects, funded projects | `data/research.yml` |
@@ -15,7 +15,7 @@ updates by itself about one minute later.
 | Teaching (courses) | `data/teaching.yml` |
 | Your photo | `photos/members/` (name set in `data/profile.yml`) |
 | Group photos | `data/gallery.yml` + `photos/gallery/` |
-| Campus banner photo (bottom of front page) | `photos/site/` (name set in `data/profile.yml` under `banner`) |
+| Campus photo (bottom of front page) | `photos/site/` (name set in `data/profile.yml` under `banner`) |
 | Logo strip (institution logos) | `photos/logos/` (names set in `data/profile.yml` under `logos`) |
 | Lab logo | `photos/site/logo.png` (upload a new file with the same name) |
 | Publications | Automatic from Google Scholar. Corrections in `data/publications-extra.yml` |

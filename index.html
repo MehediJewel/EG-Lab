@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Mehedi Hassan · Power & Energy Systems</title>
-<meta name="description" content="Dr. Mehedi Hassan: Postdoctoral Research Fellow at IRC-SES, KFUPM and Associate Professor of EEE at JUST. Research on grid resilience, distribution grid flexibility and low-carbon energy systems.">
-<meta property="og:title" content="Mehedi Hassan · Power & Energy Systems">
-<meta property="og:image" content="photos/members/dr-mehedi-hassan.jpg">
+<title>EG Lab · Energy Grid Research Group, JUST</title>
+<meta name="description" content="Energy Grid (EG) Research Group, Dept. of EEE, Jashore University of Science and Technology. Research on grid resilience, distribution grid flexibility, DER integration and agri-energy systems.">
+<meta property="og:title" content="EG Lab · Energy Grid Research Group, JUST">
+<meta property="og:image" content="photos/site/logo.png">
 <link rel="icon" type="image/png" href="photos/site/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,12 +17,12 @@
 <!--BODY-START-->
 <header class="top">
   <div class="col top-in">
-    <a class="brand" href="#home"><img src="photos/site/logo.png" alt="EG Lab logo" class="brand-logo"><span class="brand-text"><span class="top-name" id="top-name">Mehedi Hassan</span><span class="brand-lab">EG Lab</span></span></a>
+    <a class="brand" href="#home"><img src="photos/site/logo.png" alt="EG Lab logo" class="brand-logo"><span class="brand-text"><span class="top-name">EG Lab</span><span class="brand-lab">Energy Grid Research Group</span></span></a>
     <nav class="nav" id="nav" aria-label="Pages">
       <a href="#home" data-nav="home">Home</a>
       <a href="#research" data-nav="research">Research</a>
+      <a href="#group" data-nav="group">Members</a>
       <a href="#publications" data-nav="publications">Publications</a>
-      <a href="#group" data-nav="group">Group</a>
       <a href="#teaching" data-nav="teaching">Teaching</a>
     </nav>
   </div>
@@ -31,31 +31,43 @@
 <main class="col">
   <!-- HOME -->
   <div class="view" data-view="home">
-    <section class="about">
-      <div class="about-grid">
+    <section class="hero">
+      <img class="hero-logo" src="photos/site/logo.png" alt="EG Lab logo">
+      <div>
+        <h1 id="lab-name">Energy Grid (EG) Research Group</h1>
+        <p class="headline" id="lab-place"></p>
+        <div class="lab-intro" id="lab-intro"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Research focus</h2>
+      <div class="focus" id="focus"></div>
+      <a class="go" href="#research">Our research →</a>
+    </section>
+
+    <section>
+      <h2>Group lead</h2>
+      <div class="lead">
         <img class="portrait" id="portrait" src="photos/members/dr-mehedi-hassan.jpg" alt="Dr. Mehedi Hassan">
-        <div class="intro">
-          <h1><span class="fn" id="fn">Mehedi</span> <span class="ln" id="ln">Hassan</span></h1>
+        <div>
+          <p class="lead-name"><span id="fn">Mehedi</span> <span id="ln">Hassan</span></p>
           <p class="headline" id="headline"></p>
           <div id="intro"></div>
+          <dl class="kv" id="contact"></dl>
         </div>
       </div>
       <div class="logos" id="logos"></div>
     </section>
 
-    <div class="two">
-      <section>
-        <h2>Contact</h2>
-        <dl class="kv" id="contact"></dl>
-      </section>
-      <section>
-        <h2>Education</h2>
-        <ul class="plain" id="education"></ul>
-      </section>
-    </div>
+    <section>
+      <h2>Members</h2>
+      <div class="glance" id="glance"></div>
+      <a class="go" href="#group">Meet the team →</a>
+    </section>
 
     <section>
-      <h2>News</h2>
+      <h2>News &amp; achievements</h2>
       <table class="news"><tbody id="news-list"></tbody></table>
       <button type="button" class="more" id="news-more" hidden></button>
     </section>
@@ -65,6 +77,7 @@
       <ol class="pubs" id="selected"></ol>
       <a class="go" href="#publications" id="all-pubs-link">All publications →</a>
     </section>
+
     <img class="banner" id="banner" src="photos/site/just-campus-panorama.jpg" alt="Jashore University of Science and Technology campus">
   </div>
 
@@ -91,8 +104,8 @@
   <!-- GROUP -->
   <div class="view" data-view="group" hidden>
     <section>
-      <div class="grp-head"><img src="photos/site/logo.png" alt="EG Lab logo"><h1 class="page-h">EG Research Group</h1></div>
-      <p class="muted">I lead the Energy Grid (EG) Research Group at Jashore University of Science and Technology, supervising Master's and undergraduate thesis students.</p>
+      <h1 class="page-h">Members</h1>
+      <p class="muted">Master's and undergraduate thesis students of the EG Research Group, led by Dr. Mehedi Hassan.</p>
       <div id="groups"></div>
       <div class="photos" id="photos"></div>
     </section>

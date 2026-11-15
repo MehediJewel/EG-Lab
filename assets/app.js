@@ -49,7 +49,9 @@
     var full = [p.first_name, p.last_name].filter(Boolean).join(" ");
     $("fn").textContent = p.first_name || "";
     $("ln").textContent = p.last_name || "";
-    $("top-name").textContent = full;
+    if (p.lab_name) $("lab-name").textContent = p.lab_name;
+    $("lab-place").textContent = p.lab_place || "";
+    $("lab-intro").innerHTML = list(p.lab_intro).map(function (x) { return "<p>" + esc(flat(x)) + "</p>"; }).join("");
     $("headline").innerHTML = (Array.isArray(p.headline) ? p.headline : [p.headline]).filter(Boolean).map(function (x) { return "<span>" + esc(x) + "</span>"; }).join("");
     if (p.banner === "" || p.banner === null) $("banner").hidden = true;
     else if (p.banner) $("banner").src = "photos/site/" + encodeURI(p.banner);
@@ -59,7 +61,7 @@
     }).join("");
     if (p.photo) { $("portrait").src = "photos/members/" + encodeURI(p.photo); $("portrait").alt = full; }
     $("intro").innerHTML = list(p.intro).map(function (x) { return "<p>" + esc(flat(x)) + "</p>"; }).join("");
-    $("education").innerHTML = list(p.education).map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("");
+    if ($("education")) $("education").innerHTML = list(p.education).map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("");
     $("tags").innerHTML = list(p.interests).map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("");
     var rows = [];
     if (p.email) rows.push(["Email", esc(p.email)]);
@@ -67,7 +69,7 @@
     var links = list(p.links).map(function (l) { return '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + "</a>"; });
     if (links.length) rows.push(["Links", links.join(" · ")]);
     $("contact").innerHTML = rows.map(function (r) { return "<dt>" + r[0] + "</dt><dd>" + r[1] + "</dd>"; }).join("");
-    $("foot").textContent = "© " + new Date().getFullYear() + " " + full + (p.nickname ? " (" + p.nickname + ")" : "");
+    $("foot").textContent = "© " + new Date().getFullYear() + " " + (p.lab_short || "EG Lab") + (p.lab_place ? " · " + p.lab_place : "");
     SELECTED = list(p.selected_publications);
   }
 
@@ -88,6 +90,10 @@
   /* ---------- Research ---------- */
   function renderResearch(r) {
     if (!r) return;
+    $("focus").innerHTML = list(r.current).map(function (x) {
+      var first = (flat(x.text).match(/^.*?[.!?](\s|$)/) || [flat(x.text)])[0];
+      return '<div class="proj"><b>' + esc(x.title) + "</b><p>" + esc(first) + "</p></div>";
+    }).join("");
     $("current").innerHTML = list(r.current).map(function (x) {
       return '<div class="proj"><b>' + esc(x.title) + "</b><p>" + esc(flat(x.text)) + "</p></div>";
     }).join("");
@@ -170,6 +176,11 @@
         }).join("") + "</ul></div>";
       }
       $("groups").innerHTML = html;
+      var tiles = list(m.groups).filter(function (gr) { return !gr.collapsed && list(gr.people).length; }).map(function (gr) {
+        return '<div class="tile"><b>' + list(gr.people).length + "</b><span>" + esc(gr.title) + "</span></div>";
+      });
+      if (al.length) tiles.push('<div class="tile"><b>' + al.length + '</b><span>Alumni at ' + al.map(function (a) { return esc(String(a.now || "").split(",").slice(-2, -1)[0] || a.now || a.name).trim(); }).join(" and ") + "</span></div>");
+      $("glance").innerHTML = tiles.join("");
     }
     $("photos").innerHTML = list(g && g.photos).filter(function (p) { return p && p.photo; }).slice(0, 3).map(function (p) {
       return '<img src="photos/gallery/' + encodeURI(p.photo) + '" alt="EG Research Group' + (p.year ? ", " + esc(p.year) : "") + '" loading="lazy">';

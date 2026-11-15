@@ -1,11 +1,21 @@
 # =====================================================================
-#  YOUR PROFILE (top of the page)
+#  LAB (top of the front page)
+# =====================================================================
+
+lab_short: EG Lab
+lab_name: Energy Grid (EG) Research Group
+lab_place: Dept. of EEE, Jashore University of Science and Technology, Bangladesh
+lab_intro:
+  - We work on sustainable energy systems, grid modernization and high renewable energy integration, and we are committed to training the next generation of engineers and scientists.
+
+# =====================================================================
+#  GROUP LEAD (you), shown in the "Group lead" box on the front page
 #  Change the text after the colon. Keep the spaces at the start of
 #  each line exactly as they are. Text with a colon (:) in it should be
 #  wrapped in "double quotes".
 # =====================================================================
 
-first_name: Mehedi
+first_name: Dr. Mehedi
 last_name: Hassan
 nickname: Jewel
 
@@ -20,8 +30,7 @@ photo: dr-mehedi-hassan.jpg
 # Short introduction on the front page. Keep it to 2-3 sentences.
 # Each paragraph starts with "- ".
 intro:
-  - I work on data-driven methods for low-carbon energy systems and grid resilience, with a focus on distribution grid flexibility, DER integration and agri-energy systems.
-  - I am on leave from Jashore University of Science and Technology (JUST), Bangladesh, where I lead the Energy Grid (EG) Research Group.
+  - Ph.D., Macquarie University, Australia. Works on data-driven methods for low-carbon energy systems and grid resilience.
 
 # Education, shown on the front page
 education:
