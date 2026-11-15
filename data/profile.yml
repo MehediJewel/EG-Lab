@@ -40,7 +40,7 @@ interests:
   - HVDC & AC/DC dynamics
 
 # Contact details on the front page
-address: Room 215, Dept. of EEE, Jashore University of Science and Technology, Jashore-7408, Bangladesh
+address: Research Institute, Building 15, KFUPM, Dhahran, Saudi Arabia
 
 # Links shown in the contact box. Add or remove freely.
 email: m.hassan@just.edu.bd
@@ -53,7 +53,7 @@ links:
 # Your Google Scholar ID (publications update automatically every week)
 google_scholar_id: 9YTCcVAAAAAJ
 
-# Wide campus photo at the top of the front page, stored in photos/site/.
+# Wide campus photo at the bottom of the front page, stored in photos/site/.
 # To change it, upload a new photo there and write its file name here.
 # Write banner: "" to hide it.
 banner: just-campus-panorama.jpg
@@ -77,6 +77,8 @@ logos:
   - name: KUET
     file: kuet.png
     url: https://www.kuet.ac.bd
+  - name: BEPRC
+    file: beprc.png
   - name: IEEE
     file: ieee.svg
     url: https://www.ieee.org
