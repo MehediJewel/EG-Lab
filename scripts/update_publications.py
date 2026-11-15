@@ -133,7 +133,7 @@ def main() -> int:
     site = yaml.safe_load((DATA / "profile.yml").read_text(encoding="utf-8")) or {}
     author_id = str(site.get("google_scholar_id") or "").strip()
     if not author_id:
-        print("No google_scholar_id in data/site.yml; nothing to do.")
+        print("No google_scholar_id in data/profile.yml; nothing to do.")
         return 0
 
     result, errors = None, []
