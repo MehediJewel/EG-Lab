@@ -1,0 +1,101 @@
+# =====================================================================
+#  LAB (top of the front page)
+# =====================================================================
+
+lab_short: EG Lab
+lab_name: Energy Grid (EG) Research Group
+lab_place: Dept. of EEE, Jashore University of Science and Technology, Bangladesh
+lab_intro:
+  - We work on sustainable energy systems, grid modernization and the integration of high shares of renewable energy, and we are committed to training the next generation of engineers and scientists.
+
+# =====================================================================
+#  GROUP LEAD (you), shown in the "Group lead" box on the front page
+#  Change the text after the colon. Keep the spaces at the start of
+#  each line exactly as they are. Text with a colon (:) in it should be
+#  wrapped in "double quotes".
+# =====================================================================
+
+first_name: Dr. Mehedi
+last_name: Hassan
+nickname: Jewel
+
+# Lines under your name: current position first, then your permanent post.
+headline:
+  - Postdoctoral Research Fellow, IRC-SES, KFUPM, Saudi Arabia
+  - Associate Professor (on leave), Dept. of EEE, JUST, Bangladesh
+
+# Your photo, stored in photos/members/
+photo: dr-mehedi-hassan.jpg
+
+# Research interests, one short line in the Group lead box
+research_line: Data-driven decision-making for low-carbon energy systems, grid resilience, distribution grid flexibility and agri-energy systems.
+
+# Education, shown in the Group lead box
+education:
+  - Ph.D. in Engineering, Macquarie University, Australia, 2022
+  - M.Sc. in EEE, KUET, Bangladesh, 2016
+  - B.Sc. in EEE, KUET, Bangladesh, 2010
+
+# Short research keywords shown as tags
+interests:
+  - Grid resilience
+  - Distribution grid flexibility
+  - DER integration
+  - Microgrids
+  - Agri-energy systems
+  - AI for power systems
+  - HVDC & AC/DC dynamics
+
+# Contact details on the front page
+address: Research Institute, Building 15, KFUPM, Dhahran, Saudi Arabia
+
+# Links shown in the contact box. Add or remove freely.
+email:
+  - mehedi.hassan@kfupm.edu.sa
+  - m.hassan@just.edu.bd
+links:
+  - label: Google Scholar
+    url: https://scholar.google.com/citations?user=9YTCcVAAAAAJ&hl=en
+  - label: JUST profile
+    url: https://just.edu.bd/t/teacher-jewel
+
+# Your Google Scholar ID (publications update automatically every week)
+google_scholar_id: 9YTCcVAAAAAJ
+
+# Wide campus photo at the bottom of the front page, stored in photos/site/.
+# To change it, upload a new photo there and write its file name here.
+# Write banner: "" to hide it.
+banner: just-campus-panorama.jpg
+
+# Logo strip under your introduction. Logos are stored in photos/logos/.
+# Upload a logo with the file name shown (PNG or SVG with a clear background).
+# Until the file is there, the short name is shown as text instead.
+logos:
+  - name: IRC-SES
+    file: irc-ses.png
+    url: https://www.kfupm.edu.sa
+  - name: KFUPM
+    file: kfupm.png
+    url: https://www.kfupm.edu.sa
+  - name: JUST
+    file: just.png
+    url: https://just.edu.bd
+  - name: Macquarie University
+    file: macquarie.png
+    url: https://www.mq.edu.au
+  - name: KUET
+    file: kuet.png
+    url: https://www.kuet.ac.bd
+  - name: BEPRC
+    file: beprc.png
+  - name: IEEE
+    file: ieee.svg
+    url: https://www.ieee.org
+
+# Papers shown on the front page. Write the first few words of each title.
+# Leave the list empty to show your 4 most cited papers instead.
+selected_publications:
+  - Mission-aware Model Predictive Control
+  - Techno-economic and resilience optimization of a university microgrid
+  - Threshold-free localized scheme for DC fault identification
+  - Frequency regulation of multiple asynchronous grids

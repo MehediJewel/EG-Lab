@@ -7,14 +7,17 @@ updates by itself about one minute later.
 
 | What you want to change | File or folder |
 |---|---|
-| Lab name, tagline, welcome text, contact, links | `data/site.yml` |
+| Lab name and intro, your name, headline, research tags, email and links | `data/profile.yml` |
 | Members, students, alumni, your positions | `data/members.yml` |
 | Member photos | `photos/members/` |
 | Research areas, current projects, funded projects | `data/research.yml` |
 | News | `data/news.yml` |
 | Teaching (courses) | `data/teaching.yml` |
-| Logo, tab icon, campus photo | `photos/site/` (names set in `data/site.yml`) |
+| Your photo | `photos/members/` (name set in `data/profile.yml`) |
 | Group photos | `data/gallery.yml` + `photos/gallery/` |
+| Campus photo (bottom of front page) | `photos/site/` (name set in `data/profile.yml` under `banner`) |
+| Logo strip (institution logos) | `photos/logos/` (names set in `data/profile.yml` under `logos`) |
+| Lab logo | `photos/site/logo.png` (upload a new file with the same name) |
 | Publications | Automatic from Google Scholar. Corrections in `data/publications-extra.yml` |
 
 ---
@@ -23,7 +26,7 @@ updates by itself about one minute later.
 
 ### Edit any text
 1. Open your repository on github.com and click into the `data` folder.
-2. Click the file (for example `site.yml`), then the **pencil icon** (Edit) at the top right.
+2. Click the file (for example `profile.yml`), then the **pencil icon** (Edit) at the top right.
 3. Change the words after the colon `:`.
 4. Click the green **Commit changes** button, then **Commit changes** again.
 5. Wait about a minute and refresh your website.
@@ -101,24 +104,6 @@ Open `data/news.yml`. Copy the first block, paste it **at the top** (newest firs
        year: "2026"
    ```
    The year buttons above the photos are made automatically.
-
-### Change the logo or campus photo
-Upload the new picture to `photos/site/` with the **same name** as the old one
-(`logo.png`, `favicon.png`, `campus-hero.jpg`, `campus-about.jpg` or `campus-band.jpg`) and it replaces it. Or upload it under a new name
-and change the name in `data/site.yml`.
-
----
-
-## Publications (automatic)
-
-Every Monday morning, GitHub reads your Google Scholar profile and updates the
-publication list, citation count and h-index on the site. You do nothing.
-
-- **Update right now** (for example after a new paper appears on Scholar):
-  go to the **Actions** tab, choose **Update publications**, click **Run workflow**, then **Run workflow** again.
-  The site updates a couple of minutes later.
-- **A paper is missing from Scholar:** add it in `data/publications-extra.yml` under `add:` (there is an example in the file).
-- **Scholar wrongly added someone else's paper:** put its title (or its first few words) under `hide:` in the same file.
 
 ### Making the automatic update reliable (recommended, free, 5 minutes)
 Google sometimes blocks automatic visits to Scholar from GitHub's servers. When that happens
