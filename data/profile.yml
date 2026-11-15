@@ -6,7 +6,7 @@ lab_short: EG Lab
 lab_name: Energy Grid (EG) Research Group
 lab_place: Dept. of EEE, Jashore University of Science and Technology, Bangladesh
 lab_intro:
-  - We work on sustainable energy systems, grid modernization and high renewable energy integration, and we are committed to training the next generation of engineers and scientists.
+  - We work on sustainable energy systems, grid modernization and the integration of high shares of renewable energy, and we are committed to training the next generation of engineers and scientists.
 
 # =====================================================================
 #  GROUP LEAD (you), shown in the "Group lead" box on the front page
@@ -27,12 +27,10 @@ headline:
 # Your photo, stored in photos/members/
 photo: dr-mehedi-hassan.jpg
 
-# Short introduction on the front page. Keep it to 2-3 sentences.
-# Each paragraph starts with "- ".
-intro:
-  - Ph.D., Macquarie University, Australia. Works on data-driven methods for low-carbon energy systems and grid resilience.
+# Research interests, one short line in the Group lead box
+research_line: Data-driven decision-making for low-carbon energy systems, grid resilience, distribution grid flexibility and agri-energy systems.
 
-# Education, shown on the front page
+# Education, shown in the Group lead box
 education:
   - Ph.D. in Engineering, Macquarie University, Australia, 2022
   - M.Sc. in EEE, KUET, Bangladesh, 2016
@@ -52,7 +50,9 @@ interests:
 address: Research Institute, Building 15, KFUPM, Dhahran, Saudi Arabia
 
 # Links shown in the contact box. Add or remove freely.
-email: m.hassan@just.edu.bd
+email:
+  - mehedi.hassan@kfupm.edu.sa
+  - m.hassan@just.edu.bd
 links:
   - label: Google Scholar
     url: https://scholar.google.com/citations?user=9YTCcVAAAAAJ&hl=en

@@ -64,7 +64,11 @@
     if ($("education")) $("education").innerHTML = list(p.education).map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("");
     $("tags").innerHTML = list(p.interests).map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("");
     var rows = [];
-    if (p.email) rows.push(["Email", esc(p.email)]);
+    var edu = list(p.education);
+    if (edu.length) rows.push(["Education", edu.map(esc).join("<br>")]);
+    if (p.research_line) rows.push(["Research interests", esc(flat(p.research_line))]);
+    var mails = (Array.isArray(p.email) ? p.email : [p.email]).filter(Boolean);
+    if (mails.length) rows.push(["Email", mails.map(esc).join("<br>")]);
     if (p.address) rows.push(["Office", esc(p.address)]);
     var links = list(p.links).map(function (l) { return '<a href="' + esc(l.url) + '" target="_blank" rel="noopener">' + esc(l.label) + "</a>"; });
     if (links.length) rows.push(["Links", links.join(" · ")]);
