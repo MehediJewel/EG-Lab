@@ -119,15 +119,17 @@ groups:
 
 # ---------------------------------------------------------------------
 #  ALUMNI SPOTLIGHT: former students and where they are now.
-#  "now" is their current position. "photo" is optional (photos/members/).
+#  "year" is the year they graduated. "now" is their current position. "photo" is optional (photos/members/).
 #  Add the newest or most notable at the top.
 # ---------------------------------------------------------------------
 alumni:
   - name: Fouziya Easmin Tonny
+    year: "2025"
     now: PhD Student (fully funded), University of Toronto, Canada
     worked_on: ML-based fault diagnostics
     photo: ""
   - name: Md Kamrul Hassan Kajal
+    year: "2025"
     now: MSc Student (fully funded), University of Malaya, Malaysia
     worked_on: Grid resilience enhancement
     photo: ""

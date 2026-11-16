@@ -32,6 +32,22 @@ current:
   - title: Agri-Energy Systems
     text: Reliable, affordable and clean electricity for agriculture in Bangladesh. Our work covers solar–battery hybrid systems and virtual power plants for irrigation and farm loads, the effect of irrigation pumps on rural power quality, and fault diagnosis and degradation-aware battery management for agricultural microgrids.
 
+# Figures from recent work, shown on the Research page under "Recent results".
+# Upload the image to photos/research/ and write its file name after "photo:".
+# Add "wide: true" to show a wide figure across the full page width.
+figures:
+  - photo: agri-feeder-33bus.png
+    caption: Agricultural customers on the IEEE 33-bus test feeder
+  - photo: field-measurements.png
+    caption: Field measurements at irrigation tube-wells in Jashore
+  - photo: agri-load-boro.png
+    caption: Agricultural feeder load over the Boro season
+    wide: true
+  - photo: fault-diagnosis-emd.png
+    caption: Signal features for fault diagnosis (PSD and EMD)
+  - photo: ems-bess.png
+    caption: Day-ahead energy management with PV and battery storage
+
 funded:
   - title: "Enabling Resilience-Aware Photovoltaic Energy Systems in Bangladesh: A Technical Approach"
     funder: UGC and Jashore University of Science and Technology

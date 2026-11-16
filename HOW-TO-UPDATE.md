@@ -10,7 +10,7 @@ updates by itself about one minute later.
 | Lab name and intro, your name, headline, research tags, email and links | `data/profile.yml` |
 | Members, students, alumni, your positions | `data/members.yml` |
 | Member photos | `photos/members/` |
-| Research areas, current projects, funded projects | `data/research.yml` |
+| Research areas, current projects, research figures, funded projects | `data/research.yml` (figures in `photos/research/`) |
 | News | `data/news.yml` |
 | Teaching (courses) | `data/teaching.yml` |
 | Your photo | `photos/members/` (name set in `data/profile.yml`) |

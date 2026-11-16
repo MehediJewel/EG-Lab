@@ -101,6 +101,11 @@
     $("current").innerHTML = list(r.current).map(function (x) {
       return '<div class="proj"><b>' + esc(x.title) + "</b><p>" + esc(flat(x.text)) + "</p></div>";
     }).join("");
+    var figs = list(r.figures).filter(function (f) { return f && f.photo; });
+    $("figs").innerHTML = figs.length ? "<h2>Recent results</h2><p class=\"muted\">Figures from our submitted papers, to appear soon.</p><div class=\"figs\">" + figs.map(function (f) {
+      var src = "photos/research/" + encodeURI(f.photo);
+      return '<figure' + (f.wide ? ' class="wide"' : "") + '><a href="' + src + '" target="_blank" rel="noopener"><img src="' + src + '" alt="' + esc(f.caption || "Research figure") + '" loading="lazy"></a>' + (f.caption ? "<figcaption>" + esc(f.caption) + "</figcaption>" : "") + "</figure>";
+    }).join("") + "</div>" : "";
     $("funded").innerHTML = list(r.funded).map(function (x) {
       return "<li>" + esc(x.title) + '<span class="meta">' + [x.role, x.funder, x.period].filter(Boolean).map(esc).join(" · ") + "</span></li>";
     }).join("");
@@ -176,7 +181,7 @@
       var al = list(m.alumni).filter(function (a) { return a && a.name; });
       if (al.length) {
         html += '<div class="grp"><h3>Alumni, where they are now</h3><ul>' + al.map(function (a) {
-          return "<li>" + esc(a.name) + (a.now ? " <span>· " + esc(a.now) + "</span>" : "") + "</li>";
+          return "<li>" + esc(a.name) + (a.year ? " (" + esc(a.year) + ")" : "") + (a.now ? " <span>· " + esc(a.now) + "</span>" : "") + "</li>";
         }).join("") + "</ul></div>";
       }
       $("groups").innerHTML = html;
