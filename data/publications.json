@@ -1,8 +1,8 @@
 {
-  "updated": "2026-11-16",
+  "updated": "2026-11-23",
   "source": "Google Scholar (via SerpAPI)",
   "profile": {
-    "citations": 151,
+    "citations": 152,
     "h_index": 7,
     "i10_index": 5
   },
@@ -14,6 +14,14 @@
       "year": 2026,
       "citations": 1,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9YTCcVAAAAAJ&pagesize=100&citation_for_view=9YTCcVAAAAAJ:9ZlFYXVOiuMC"
+    },
+    {
+      "title": "Virtual Synchronous Generator Control Strategies for Frequency Stability in Grid-Forming Inverter-Based Power Systems",
+      "authors": "F Ahmed, A Islam, AK Biswas, M Hassan",
+      "venue": "2026 IEEE 2nd International Conference on Quantum Photonics, Artificial …",
+      "year": 2026,
+      "citations": 1,
+      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9YTCcVAAAAAJ&pagesize=100&citation_for_view=9YTCcVAAAAAJ:_kc_bZDykSQC"
     },
     {
       "title": "Mission-aware Model Predictive Control for tactical microgrids under monsoon uncertainty",
@@ -38,14 +46,6 @@
       "year": 2026,
       "citations": 0,
       "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9YTCcVAAAAAJ&pagesize=100&citation_for_view=9YTCcVAAAAAJ:4TOpqqG69KYC"
-    },
-    {
-      "title": "Virtual Synchronous Generator Control Strategies for Frequency Stability in Grid-Forming Inverter-Based Power Systems",
-      "authors": "F Ahmed, A Islam, AK Biswas, M Hassan",
-      "venue": "2026 IEEE 2nd International Conference on Quantum Photonics, Artificial …",
-      "year": 2026,
-      "citations": 0,
-      "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9YTCcVAAAAAJ&pagesize=100&citation_for_view=9YTCcVAAAAAJ:_kc_bZDykSQC"
     },
     {
       "title": "Techno-economic and resilience optimization of a university microgrid: A dual-tool approach",
